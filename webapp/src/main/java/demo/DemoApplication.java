@@ -1,6 +1,5 @@
-package main.java.com.example.demo;
+package demo;
 
-import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import static org.springframework.boot.SpringApplication.*;

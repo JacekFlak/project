@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 @RestController
-@RequestMapping("/apilikacja")
+@RequestMapping("/aplikacja")
 public class HelloServlet {
 
     private final Logger logger = LoggerFactory.getLogger(HelloServlet.class);

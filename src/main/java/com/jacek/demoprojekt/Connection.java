@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 @Controller
-@RequestMapping("/app")
+@RequestMapping("/api")
 public class Connection {
 
     private final Logger logger = LoggerFactory.getLogger(Connection.class);

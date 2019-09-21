@@ -11,7 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-@Controller
+@RestController
 @RequestMapping("/api")
 public class Connection {
 

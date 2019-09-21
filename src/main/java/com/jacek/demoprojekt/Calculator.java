@@ -19,8 +19,10 @@ public class Calculator {
     }
 
     @GetMapping("/calc")
-    protected double doGet(@RequestParam double a, @RequestParam double b) {
+    protected double doGet(@RequestParam(required = false, value = "a", defaultValue = "1.0") double a, @RequestParam(required = false, value = "b", defaultValue = "1.0") double b) {
         logger.info("Request got -> sum_result");
+        a = 5.0;
+        b = 11.0;
         return calculatorLogic.sum(a, b);
     }
 }

@@ -9,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
 @Service
-
 public class ConnectionLogic {
 
 }

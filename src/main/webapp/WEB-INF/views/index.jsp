@@ -7,23 +7,22 @@
 </head>
 <body>
 
-<form action="Sum">
+Type a:<br>
+<input type="text">
+<!-- int a = document.getElementById("firstValue").value;-->
+<!--name="a" id="firstValue" placeholder="a value"  -->
+<br>
 
-    Type a:<br>
-    <input type="text" name="a" id="firstValue" placeholdr="a value">
-    <!-- int a = document.getElementById("firstValue").value;-->
-    <br>
+Type b <br>
+<input type="text">
+<!-- int b = document.getElementById("secondValue").value; -->
+<!--name="b" id="secondValue" placeholder="b value" -->
+<br>
 
-    Type b <br>
-    <input type="text" name="b" id="secondValue" placeholder="b value">
-    <!-- int b = document.getElementById("secondValue").value; -->
-    <br>
+<button class="sum button">Calculate</button>
+<br>
+Result:
+<input type="text" name="sum result"><br>
 
-    <button class="sum button">Calculate</button>
-    <br>
-    Result:
-    <input type="text" name="sum result"><br>
-
-</form>
 </body>
 </html>

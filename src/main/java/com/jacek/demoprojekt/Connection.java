@@ -11,7 +11,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 
-@RestController
+@Controller
 @RequestMapping("/api")
 public class Connection {
 
@@ -22,5 +22,4 @@ public class Connection {
         logger.info("Request got -> test");
         return "index";
     }
-
 }

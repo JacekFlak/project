@@ -16,6 +16,6 @@ public class CalculatorLogicTest {
         //when
         double product = calculatorLogic.sum(firstValue, secondValue);
         //then
-       assertEquals(9.83, product);
+       assertEquals(9.83, product,0) ;
     }
 }

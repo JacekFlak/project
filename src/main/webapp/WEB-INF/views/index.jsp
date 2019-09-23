@@ -4,25 +4,30 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html" ; charset="UTF-8">
     <title>Aplikacja</title>
+
 </head>
 <body>
 
-Type a:<br>
-<input type="text">
-<!-- int a = document.getElementById("firstValue").value;-->
-<!--name="a" id="firstValue" placeholder="a value"  -->
-<br>
+<script type="text/javascript">
+    function sumValues() {
+        var a = parseFloat(document.getElementById('firstValue').value);
+        var b = parseFloat(document.getElementById('secondValue').value);
+        var total = a + b;
+        document.getElementById('sumResult').innerHTML = total.toString();
+    }
+</script>
 
-Type b <br>
-<input type="text">
-<!-- int b = document.getElementById("secondValue").value; -->
-<!--name="b" id="secondValue" placeholder="b value" -->
-<br>
+<form action="Sum">
+    Type a:<br>
+    <input type="text" name="a" id="firstValue" placeholder="a value"><br>
 
-<button class="sum button">Calculate</button>
-<br>
-Result:
-<input type="text" name="sum result"><br>
+    Type b:<br>
+    <input type="text" name="b" id="secondValue" placeholder="b value"><br>
 
+    <button name="sumButton" onClick="sumValues()">Calculate</button>
+    <br>
+    <div id="sumResult"> d<script> sumValues();</script>
+    </div>
+</form>
 </body>
 </html>

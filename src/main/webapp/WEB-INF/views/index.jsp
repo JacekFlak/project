@@ -15,19 +15,36 @@
         var total = a + b;
         document.getElementById('sumResult').innerHTML = total.toString();
     }
+
+    function subValues() {
+        var a = parseFloat(document.getElementById('firstValue').value);
+        var b = parseFloat(document.getElementById('secondValue').value);
+        var total = a - b;
+        document.getElementById('sumResult').innerHTML = total.toString();
+    }
+
+    function clearField() {
+        var blank = " ";
+        document.getElementById('sumResult').innerHTML = blank;
+    }
 </script>
 
-<form action="Sum">
+<form id="calc" name="sum" action="test" method="get">
     Type a:<br>
-    <input type="text" name="a" id="firstValue" placeholder="a value"><br>
-
+    <input type="text"  class="form-control" name="a" id="firstValue" placeholder="a value"><br><br>
     Type b:<br>
-    <input type="text" name="b" id="secondValue" placeholder="b value"><br>
+    <input type="text"  class="form-control" name="b" id="secondValue" placeholder="b value"><br><br>
 
-    <button name="sumButton" onClick="sumValues()">Calculate</button>
+    <input type="button" name="sumButton" class="btn btn-md btn-success btn-block" value="+"
+           onClick="sumValues()">
+
+    <input type="button" name="subButton" class="btn btn-md btn-success btn-block" value="-"
+           onClick="subValues()">
+
+    <input type="button" name="clearResult" class="btn btn-md btn-success btn-block" value="Clear"
+           onClick="clearField()">
     <br>
-    <div id="sumResult"> d<script> sumValues();</script>
-    </div>
+    <div id="sumResult" value=" "></div>
 </form>
 </body>
 </html>

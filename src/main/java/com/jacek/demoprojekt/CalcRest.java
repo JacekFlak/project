@@ -9,26 +9,26 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api")
-public class Calculator {
+public class CalcRest {
 
-    private CalculatorFunctions calculatorFunctions;
-    private final Logger logger = LoggerFactory.getLogger(Connection.class);
+    private CalcService calcService;
+    private final Logger logger = LoggerFactory.getLogger(ApplicationController.class);
 
-    public Calculator(CalculatorFunctions calculatorFunctions) {
-        this.calculatorFunctions = calculatorFunctions;
+    public CalcRest(CalcService calcService) {
+        this.calcService = calcService;
     }
 
-    private String a;// = request.getParameter("firstValue");
+   /* private String a;// = request.getParameter("firstValue");
     private String b;// = request.getParameter("secondValue");
     private double aValue = Double.parseDouble(a);
     private double bValue = Double.parseDouble(b);
     private double sumValue = CalculatorFunctions.sum(aValue, bValue);
-
-    String wynik = String.valueOf(sumValue);
+    String wynik = String.valueOf(sumValue);*/
 
     @GetMapping("/calc")
     protected double doGet(@RequestParam(required = false, value = "a", defaultValue = " ") double a, @RequestParam(required = false, value = "b", defaultValue = " ") double b) {
         logger.info("Request got -> sum_result");
-        return calculatorFunctions.sum(a, b);
+
+        return calcService.sum(a, b);
     }
 }

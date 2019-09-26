@@ -1,4 +1,4 @@
-package com.jacek.demoprojekt;
+package com.jacek.demoprojekt.modal;
 
 import lombok.Data;
 

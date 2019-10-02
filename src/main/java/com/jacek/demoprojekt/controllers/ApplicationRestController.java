@@ -1,17 +1,20 @@
-package com.jacek.demoprojekt;
+package com.jacek.demoprojekt.controllers;
 
+import com.jacek.demoprojekt.modal.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-public class RestController {
+@RestController
+public class ApplicationRestController {
 
     @Autowired
-    private UserServiceLogic UserServiceLogic;
+    private com.jacek.demoprojekt.services.UserServiceLogic UserServiceLogic;
 
     @GetMapping("/")
     public String hello() {
-        return "Home page";
+        return"Home page";
     }
 
     @GetMapping("/save-user")

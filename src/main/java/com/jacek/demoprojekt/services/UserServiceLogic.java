@@ -1,5 +1,7 @@
-package com.jacek.demoprojekt;
+package com.jacek.demoprojekt.services;
 
+import com.jacek.demoprojekt.modal.User;
+import com.jacek.demoprojekt.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;

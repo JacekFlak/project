@@ -2,9 +2,8 @@ package com.jacek.demoprojekt.modal;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+
 
 @Entity
 @Table(name = "users")
@@ -12,6 +11,8 @@ import javax.persistence.Table;
 public class User {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", unique = true, nullable = false)
     private int id;
     private String username;
     private String firstname;

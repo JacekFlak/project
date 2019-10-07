@@ -14,7 +14,7 @@ public class ApplicationRestController {
 
     @GetMapping("/")
     public String hello() {
-        return"Home page";
+        return "Home page";
     }
 
     @GetMapping("/save-user")

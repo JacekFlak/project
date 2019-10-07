@@ -1,6 +1,7 @@
 package com.jacek.demoprojekt.modal;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
@@ -8,6 +9,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "users")
 @Data
+@NoArgsConstructor //konstruktor bezparametrowy
 public class User {
 
     @Id
@@ -20,6 +22,9 @@ public class User {
     private String password;
 
     public User(String username, String firstname, String lastname, String password) {
+        this.username = username;
+        this.firstname = firstname;
+        this.lastname = lastname;
+        this.password = password;
     }
-
 }

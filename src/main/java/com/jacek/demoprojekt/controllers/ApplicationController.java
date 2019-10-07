@@ -17,9 +17,11 @@ public class ApplicationController {
 
     private final Logger logger = LoggerFactory.getLogger(ApplicationController.class);
 
-    @GetMapping(value = "/login")
-    protected String Login() {
+    @GetMapping("/login")
+    public String Login() {
+
         logger.info("Request got -> test");
+
         return "loginpage";
     }
 }

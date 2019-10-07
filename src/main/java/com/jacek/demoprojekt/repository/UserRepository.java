@@ -1,6 +1,6 @@
 package com.jacek.demoprojekt.repository;
 
-import com.jacek.demoprojekt.modal.User;
+import com.jacek.demoprojekt.user.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

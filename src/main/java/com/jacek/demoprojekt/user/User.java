@@ -1,4 +1,4 @@
-package com.jacek.demoprojekt.modal;
+package com.jacek.demoprojekt.user;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

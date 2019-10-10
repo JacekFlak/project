@@ -5,11 +5,10 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
-
 @Entity
 @Table(name = "users")
 @Data
-@NoArgsConstructor //konstruktor bezparametrowy
+@NoArgsConstructor
 public class User {
 
     @Id

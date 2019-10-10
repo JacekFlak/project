@@ -5,6 +5,6 @@ TO DO:
 - [ ] Podział na role
 - [ ] Podgląd wszystkich procesów
 
-
-Database:
+<br>
+Database:<br>
 ![alt text](https://github.com/JacekFlak/project/blob/develop/src/main/resources/static/images/db.png)

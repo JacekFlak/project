@@ -5,6 +5,9 @@ TO DO:
 - [ ] Podział na role
 - [ ] Podgląd wszystkich procesów
 
+Wstępna dokumentacja:
+https://docs.google.com/document/d/1M5pL5wa0pytzyjbaswZo_c6_nHTW8dCser4nxfqnrPg/edit
+
 <br>
 
 Database:

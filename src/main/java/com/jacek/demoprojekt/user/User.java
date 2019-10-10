@@ -44,4 +44,21 @@ public class User {
     @Transient //wartosc olewana przez hibernate przy insert/update
     private String operacja;
 
+    //getters
+    public String getEmail() {
+        return email;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public String getPassword() {
+        return password;
+
+    }
 }

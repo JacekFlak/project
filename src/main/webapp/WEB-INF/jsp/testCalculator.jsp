@@ -31,9 +31,9 @@
 
 <form id="calc" name="sum" action="test" method="get">
     Type a:<br>
-    <input type="text"  class="form-control" name="a" id="firstValue" placeholder="a value"><br><br>
+    <input type="text" class="form-control" name="a" id="firstValue" placeholder="a value"><br><br>
     Type b:<br>
-    <input type="text"  class="form-control" name="b" id="secondValue" placeholder="b value"><br><br>
+    <input type="text" class="form-control" name="b" id="secondValue" placeholder="b value"><br><br>
 
     <input type="button" name="sumButton" class="btn btn-md btn-success btn-block" value="+"
            onClick="sumValues()">

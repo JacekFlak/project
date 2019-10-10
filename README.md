@@ -1,9 +1,10 @@
 TO DO:
 - [x] Połączenie z bazą danych
-- [ ] Rejestracja
+- [x] Rejestracja
 - [ ] Logowanie
-- [ ] CRUD procesów
+- [ ] Podział na role
+- [ ] Podgląd wszystkich procesów
 
 
-Command to use:
-http://localhost:8597/save-user?username=test&firstname=jacek&lastname=flak&password=12345
+Database:
+![alt text](https://github.com/JacekFlak/project/blob/develop/src/main/resources/static/images/db.png)

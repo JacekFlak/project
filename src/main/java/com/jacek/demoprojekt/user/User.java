@@ -4,26 +4,44 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.util.Set;
 
 @Entity
-@Table(name = "users")
+@Table(name = "user")
 @Data
-@NoArgsConstructor
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", unique = true, nullable = false)
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "user_id")
     private int id;
-    private String username;
-    private String firstname;
-    private String lastname;
+
+    @Column(name = "email")
+    @NotNull
+    private String email;
+
+    @Column(name = "password")
+    @NotNull
     private String password;
 
-    public User(String username, String firstname, String lastname, String password) {
-        this.username = username;
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.password = password;
-    }
+    @Column(name = "name")
+    @NotNull
+    private String name;
+
+    @Column(name = "lastName")
+    @NotNull
+    private String lastName;
+
+    @Column(name = "active")
+    @NotNull
+    private int active;
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private Set<Role> roles; //kolekcja z rolami
+
+    @Transient //wartosc olewana przez hibernate przy insert/update
+    private String operacja;
+
 }

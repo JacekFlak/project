@@ -1,6 +1,6 @@
 TO DO:
 - [x] Połączenie z bazą danych
-- [x] Rejestracja
+- [ ] Rejestracja
 - [ ] Logowanie
 - [ ] Podział na role
 - [ ] Podgląd wszystkich procesów

@@ -1,2 +1,15 @@
-Command to use:
-http://localhost:8597/save-user?username=test&firstname=jacek&lastname=flak&password=12345
+TO DO:
+- [x] Połączenie z bazą danych
+- [ ] Rejestracja
+- [ ] Logowanie
+- [ ] Podział na role
+- [ ] Podgląd wszystkich procesów
+
+Wstępna dokumentacja:
+https://docs.google.com/document/d/1M5pL5wa0pytzyjbaswZo_c6_nHTW8dCser4nxfqnrPg/edit
+
+<br>
+
+Database:
+<br>
+![alt text](https://github.com/JacekFlak/project/blob/develop/src/main/resources/static/images/db.png)

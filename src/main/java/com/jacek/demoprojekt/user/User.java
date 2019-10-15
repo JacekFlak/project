@@ -57,6 +57,19 @@ public class User {
         return lastName;
     }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    //setters
+    public void setActive(int active) {
+        this.active = active;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
+
     public String getPassword() {
         return password;
 

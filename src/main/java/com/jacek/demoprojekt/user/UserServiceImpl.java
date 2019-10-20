@@ -12,11 +12,9 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class UserServiceImpl implements UserService {
 
-    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
     private UserRepository userRepository;
 
-    @SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection")
     @Autowired
     private RoleRepository roleRepository;
     @Autowired

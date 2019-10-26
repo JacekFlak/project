@@ -1,52 +1,40 @@
 package com.jacek.demoprojekt.user;
 
-import java.util.Locale;
-
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import com.jacek.demoprojekt.validators.UserRegisterValidator;
+import lombok.RequiredArgsConstructor;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.RequestMapping;
-import validators.UserRegisterValidator;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.Locale;
 
 @Controller
+@RequiredArgsConstructor
 public class RegisterController {
 
-    @Autowired
-    private UserService userService;
+    private final UserService userService;
+    private final MessageSource messageSource;
 
-    @Autowired
-    MessageSource messageSource;
-
-    @GET
-    @RequestMapping(value = "/register")
+    @GetMapping("/register")
     public String registerForm(Model model) {
-        User u = new User();
-        model.addAttribute("user", u);
+        model.addAttribute("user", new User());
         return "register";
     }
 
-    @POST
-    @RequestMapping(value = "/adduser")
+    @PostMapping("/adduser")
     public String registerAction(User user, BindingResult result, Model model, Locale locale) {
-
-        String returnPage = null;
-
-        User userExist = userService.findUserByEmail(user.getEmail());
-
-        new UserRegisterValidator().validateEmailExist(userExist, result);
-
+        String returnPage = "register";
+        User foundUser = userService.findUserByEmail(user.getEmail());
+        new UserRegisterValidator().validateEmailExist(user, foundUser, result);
         new UserRegisterValidator().validate(user, result);
 
-        if (result.hasErrors()) {
+        if (!result.hasErrors()) {
             userService.saveUser(user);
             model.addAttribute("message", messageSource.getMessage("user.register.success", null, locale));
             model.addAttribute("user", new User());
-            returnPage = "register";
         }
         return returnPage;
     }

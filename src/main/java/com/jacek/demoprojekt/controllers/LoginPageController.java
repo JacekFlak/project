@@ -1,4 +1,4 @@
-package controllers;
+package com.jacek.demoprojekt.controllers;
 
 import javax.ws.rs.GET;
 
@@ -8,14 +8,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class MainPageController {
+public class LoginPageController {
 
     private static final Logger LOG = LoggerFactory.getLogger(MainPageController.class);
 
     @GET
-    @RequestMapping(value = {"/", "/index"})
-    public String showMainPage() {
-        LOG.info("************ showMainPage()");
-        return "index";
+    @RequestMapping(value = "/login")
+    public String showLoginPage() {
+        LOG.info("************ showLoginPage()");
+        return "login";
     }
+
 }

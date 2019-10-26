@@ -1,4 +1,4 @@
-package validators;
+package com.jacek.demoprojekt.validators;
 
 import com.jacek.demoprojekt.constants.AppDemoConstants;
 import com.jacek.demoprojekt.user.User;
@@ -38,9 +38,11 @@ public class UserRegisterValidator implements Validator {
         }
     }
 
-    public void validateEmailExist(User user, Errors errors) {
-        if (user != null) {
-            errors.rejectValue("email", "error.userEmailExist");
+    public void validateEmailExist(User user, User foundUser, Errors errors) {
+        if (foundUser != null && user != null) {
+            if (foundUser.getEmail().equals(user.getEmail())) {
+                errors.rejectValue("email", "error.userEmailExist");
+            }
         }
     }
 

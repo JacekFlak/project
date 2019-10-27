@@ -16,7 +16,7 @@
     <s:message code="login.pageName"/>
 </h2>
 
-<sf:form id="loginForm" action="/login" method="POST">
+<form id="loginForm" action="/login" method="POST">
 
     <table width="350" border="0" cellpadding="4" cellspacing="1"
            align="center">
@@ -33,8 +33,8 @@
                 <s:message code="register.email"/>
             </td>
             <td align="left">
-                <sf:input type="text" name="email" id="email"
-                       size="30" path=""/>
+                <input type="text" name="email" id="email"
+                       size="30"/>
             </td>
         </tr>
         <tr>
@@ -42,7 +42,7 @@
                 <s:message code="register.password"/>
             </td>
             <td align="left">
-                <sf:input type="password" name="password" id="password" size="30" path=""/>
+                <input type="password" name="password" id="password" size="30"/>
             </td>
         </tr>
 
@@ -52,6 +52,6 @@
         </tr>
 
     </table>
-</sf:form>
+</form>
 </body>
 </html>

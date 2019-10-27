@@ -43,5 +43,7 @@ public class User {
     @Transient
     private String operacja;
 
+    @Transient
+    private int nrRoli;
 
 }

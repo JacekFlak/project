@@ -6,18 +6,18 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title><s:message code="profile.userData"/>></title>
+    <title><s:message code="profile.userData"/></title>
 </head>
 <body>
 <%@include file="/WEB-INF/incl/menu.app" %>
 <div allign="center">
-<h2><s:message code="profile.userData"/></h2>
+    <h2><s:message code="profile.userData"/></h2>
 </div>
 
 <table width="500" border="0" cellpadding="4" cellspacing="1" align="center">
 
     <tr>
-        <td width="130" align="right" >
+        <td width="130" align="right">
             <s:message code="register.email"/>
         </td>
         <td width="270" align="left">
@@ -26,7 +26,7 @@
     </tr>
 
     <tr>
-        <td width="130" align="right" >
+        <td width="130" align="right">
             <s:message code="register.name"/>
         </td>
         <td width="270" align="left">
@@ -35,7 +35,7 @@
     </tr>
 
     <tr>
-        <td width="130" align="right" >
+        <td width="130" align="right">
             <s:message code="register.lastName"/>
         </td>
         <td width="270" align="left">
@@ -44,7 +44,7 @@
     </tr>
 
     <tr>
-        <td width="130" align="right" >
+        <td width="130" align="right">
             <s:message code="profile.isActive"/>
         </td>
         <td width="270" align="left">
@@ -60,7 +60,7 @@
     </tr>
 
     <tr>
-        <td width="130" align="right" >
+        <td width="130" align="right">
             <s:message code="profile.role"/>
         </td>
         <td width="270" align="left">
@@ -75,6 +75,21 @@
         </td>
     </tr>
 
+</table>
+
+<table width="500" border="0" cellpadding="4" cellspacing="1" align="center">
+
+    <tr>
+        <td align="center">
+            <input type="button" value="<s:message code="button.editProfile"/>"
+                   onclick="window.location.href='${pageContext.request.contextPath}/editprofil'"/>
+        </td>
+        <td align="center">
+            <input type="button" value="<s:message code="button.changePassword"/>"
+                   onclick="window.location.href='${pageContext.request.contextPath}/editpassword'"/>
+        </td>
+
+    </tr>
 </table>
 
 </body>

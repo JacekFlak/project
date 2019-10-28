@@ -29,4 +29,14 @@ public class ProfilController {
 
         return "profile";
     }
+
+    @GET
+    @RequestMapping(value = "/editpassword")
+    public String editUserPassword(Model model) {
+        String username = UserUtilities.getLoggedUser();
+        User user = userService.findUserByEmail(username);
+        model.addAttribute("user", user);
+        return "editpassword";
+    }
+
 }

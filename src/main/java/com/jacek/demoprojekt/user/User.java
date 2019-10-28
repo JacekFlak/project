@@ -1,6 +1,7 @@
 package com.jacek.demoprojekt.user;
 
 import lombok.Data;
+import org.hibernate.validator.constraints.Range;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -46,4 +47,6 @@ public class User {
     @Transient
     private int nrRoli;
 
+    @Transient
+    private String newPassword;
 }

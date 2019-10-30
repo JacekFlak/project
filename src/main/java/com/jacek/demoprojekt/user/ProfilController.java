@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -21,8 +22,7 @@ public class ProfilController {
 
     private final MessageSource messageSource;
 
-    @GET
-    @RequestMapping(value = "/profile")
+    @RequestMapping(value = "/profile", method = RequestMethod.GET)
     public String showUserProfilePage(Model model) {
         String username = UserUtilities.getLoggedUser();
 
@@ -37,8 +37,7 @@ public class ProfilController {
         return "profile";
     }
 
-    @GET
-    @RequestMapping(value = "/editpassword")
+    @RequestMapping(value = "/editpassword", method = RequestMethod.GET)
     public String editUserPassword(Model model) {
         String username = UserUtilities.getLoggedUser();
         User user = userService.findUserByEmail(username);
@@ -46,8 +45,7 @@ public class ProfilController {
         return "editpassword";
     }
 
-    @POST
-    @RequestMapping(value = "/updatepass")
+    @RequestMapping(value = "/updatepass", method = RequestMethod.POST)
     public String changeUSerPassword(User user, BindingResult result, Model model, Locale locale) {
         String returnPage = null;
         new ChangePasswordValidator().validate(user, result);

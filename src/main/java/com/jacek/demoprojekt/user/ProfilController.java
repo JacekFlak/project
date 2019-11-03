@@ -2,6 +2,7 @@ package com.jacek.demoprojekt.user;
 
 import com.jacek.demoprojekt.utilities.UserUtilities;
 import com.jacek.demoprojekt.validators.ChangePasswordValidator;
+import com.jacek.demoprojekt.validators.EditUserProfileValidator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
@@ -56,6 +57,28 @@ public class ProfilController {
             userService.updateUserPassword(user.getNewPassword(), user.getEmail());
             returnPage = "editpassword";
             model.addAttribute("message", messageSource.getMessage("passwordChange.success", null, locale));
+        }
+        return returnPage;
+    }
+
+    @RequestMapping(value = "/editprofile", method = RequestMethod.GET)
+    public String changeUserData(Model model) {
+        String username = UserUtilities.getLoggedUser();
+        User user = userService.findUserByEmail(username);
+        model.addAttribute("user", user);
+        return "editprofile";
+    }
+
+    @RequestMapping(value = "/updateprofile", method = RequestMethod.POST)
+    public String changeUserDataAction(User user, BindingResult result, Model model, Locale locale) {
+        String returnPage;
+        new EditUserProfileValidator().validate(user, result);
+        if (result.hasErrors()) {
+            returnPage = "editprofile";
+        } else {
+            userService.updateUserProfile(user.getName(), user.getLastName(), user.getEmail(), user.getId());
+            model.addAttribute("message", messageSource.getMessage("profileEdit.success", null, locale));
+            returnPage = "afteredition";
         }
         return returnPage;
     }

@@ -82,7 +82,7 @@
     <tr>
         <td align="center">
             <input type="button" value="<s:message code="button.editProfile"/>"
-                   onclick="window.location.href='${pageContext.request.contextPath}/editprofil'"/>
+                   onclick="window.location.href='${pageContext.request.contextPath}/editprofile'"/>
         </td>
         <td align="center">
             <input type="button" value="<s:message code="button.changePassword"/>"

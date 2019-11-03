@@ -45,5 +45,4 @@ public class UserRegisterValidator implements Validator {
             }
         }
     }
-
 }

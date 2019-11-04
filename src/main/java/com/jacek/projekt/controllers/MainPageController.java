@@ -1,4 +1,4 @@
-package com.jacek.demoprojekt.controllers;
+package com.jacek.projekt.controllers;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -1,12 +1,12 @@
-package com.jacek.demoprojekt.validators;
+package com.jacek.projekt.validators;
 
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
-import com.jacek.demoprojekt.constants.AppDemoConstants;
-import com.jacek.demoprojekt.user.User;
-import com.jacek.demoprojekt.utilities.AppDemoUtils;
+import com.jacek.projekt.constants.AppDemoConstants;
+import com.jacek.projekt.user.User;
+import com.jacek.projekt.utilities.AppDemoUtils;
 
 public class EditUserProfileValidator implements Validator {
 

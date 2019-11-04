@@ -1,4 +1,4 @@
-package com.jacek.demoprojekt.configuration;
+package com.jacek.projekt.configuration;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

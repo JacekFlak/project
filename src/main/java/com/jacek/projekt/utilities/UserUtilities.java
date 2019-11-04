@@ -1,4 +1,4 @@
-package com.jacek.demoprojekt.utilities;
+package com.jacek.projekt.utilities;
 
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;

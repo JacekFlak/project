@@ -1,4 +1,4 @@
-package com.jacek.demoprojekt.utilities;
+package com.jacek.projekt.utilities;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

@@ -1,6 +1,6 @@
-package com.jacek.demoprojekt.user;
+package com.jacek.projekt.user;
 
-import com.jacek.demoprojekt.validators.UserRegisterValidator;
+import com.jacek.projekt.validators.UserRegisterValidator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;

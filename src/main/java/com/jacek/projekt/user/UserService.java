@@ -1,4 +1,4 @@
-package com.jacek.demoprojekt.user;
+package com.jacek.projekt.user;
 
 public interface UserService {
 

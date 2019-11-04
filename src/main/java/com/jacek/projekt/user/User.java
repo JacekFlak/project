@@ -1,7 +1,6 @@
-package com.jacek.demoprojekt.user;
+package com.jacek.projekt.user;
 
 import lombok.Data;
-import org.hibernate.validator.constraints.Range;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

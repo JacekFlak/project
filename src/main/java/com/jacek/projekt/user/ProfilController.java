@@ -1,10 +1,11 @@
-package com.jacek.demoprojekt.user;
+package com.jacek.projekt.user;
 
-import com.jacek.demoprojekt.utilities.UserUtilities;
-import com.jacek.demoprojekt.validators.ChangePasswordValidator;
-import com.jacek.demoprojekt.validators.EditUserProfileValidator;
+import com.jacek.projekt.utilities.UserUtilities;
+import com.jacek.projekt.validators.ChangePasswordValidator;
+import com.jacek.projekt.validators.EditUserProfileValidator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.MessageSource;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -22,6 +23,7 @@ public class ProfilController {
     private final MessageSource messageSource;
 
     @RequestMapping(value = "/profile", method = RequestMethod.GET)
+    @Secured(value = {"ROLE_USER", "ROLE_ADMIN"})
     public String showUserProfilePage(Model model) {
         String username = UserUtilities.getLoggedUser();
 

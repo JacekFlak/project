@@ -1,4 +1,4 @@
-package com.jacek.demoprojekt.controllers;
+package com.jacek.projekt.controllers;
 
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.stereotype.Controller;

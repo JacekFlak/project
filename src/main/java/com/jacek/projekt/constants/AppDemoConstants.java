@@ -1,4 +1,4 @@
-package com.jacek.demoprojekt.constants;
+package com.jacek.projekt.constants;
 
 public class AppDemoConstants {
 

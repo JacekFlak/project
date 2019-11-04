@@ -1,4 +1,4 @@
-package com.jacek.demoprojekt.user;
+package com.jacek.projekt.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;

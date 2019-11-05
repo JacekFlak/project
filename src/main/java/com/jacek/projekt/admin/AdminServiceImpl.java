@@ -1,7 +1,7 @@
 package com.jacek.projekt.admin;
 
 import com.jacek.projekt.user.User;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -9,10 +9,10 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service("adminService")
 @Transactional
+@RequiredArgsConstructor
 public class AdminServiceImpl implements AdminService {
 
-    @Autowired
-    private AdminRepository adminRepository;
+    private final AdminRepository adminRepository;
 
     @Override
     public Page<User> findAll(Pageable pageable) {

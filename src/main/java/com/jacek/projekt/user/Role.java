@@ -1,5 +1,7 @@
 package com.jacek.projekt.user;
 
+import lombok.Data;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -8,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
+@Data
 @Entity
 @Table(name = "role")
 public class Role {
@@ -20,19 +23,5 @@ public class Role {
     @Column(name = "role")
     @NotNull
     private String role;
-
-
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
-    }
-    public String getRole() {
-        return role;
-    }
-    public void setRole(String role) {
-        this.role = role;
-    }
 
 }

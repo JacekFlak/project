@@ -1,7 +1,7 @@
 package com.jacek.projekt.admin;
 
 import com.jacek.projekt.user.User;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.security.access.annotation.Secured;
@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.List;
 
 @Controller
+@RequiredArgsConstructor
 public class AdminPageController {
 
-    @Autowired
-    private AdminService adminService;
+    private final AdminService adminService;
 
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
     @Secured(value = {"ROLE_ADMIN"})

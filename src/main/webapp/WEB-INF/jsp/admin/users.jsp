@@ -10,50 +10,88 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" type="text/css" href="../css/style.css"/>
     <title><s:message code="menu.users"/></title>
+    <script type="text/javascript">
+        function changeTrBg(row) {
+            row.style.backgroundColor = "#e6e6e6";
+        }
+
+        function defaultTrBg(row) {
+            row.style.backgroundColor = "white";
+        }
+    </script>
 </head>
 <body>
 <%@include file="/WEB-INF/incl/menu.app" %>
 <h2><s:message code="menu.users"/></h2>
-
-    <table width="1000" border="0" cellpadding="6" cellspacing="0">
-        <tr>
+<c:set var="count" value="${recordStartCounter }"/>
+<div align="center">
+    <div align="right" style="width: 1000px; padding: 2px;">
+        <input type="hidden" name="cp" id="cp" value="${currentPage}"/>
+    </div>
+    <table width="1000" border="0" cellpadding="6" cellspacing="2">
+        <tr bgcolor="#ffddcc">
+            <td width="40" align="center"></td>
             <td width="40" align="center"><b><s:message code="admin.user.id"/></b></td>
             <td width="190" align="center"><b><s:message code="register.name"/></b></td>
             <td width="190" align="center"><b><s:message code="register.lastName"/></b></td>
             <td width="200" align="center"><b><s:message code="register.email"/></b></td>
             <td width="100" align="center"><b><s:message code="profile.isActive"/></b></td>
             <td width="190" align="center"><b><s:message code="profile.role"/></b></td>
+            <td width="50"></td>
         </tr>
+        <c:forEach var="u" items="${userList }">
+            <c:set var="count" value="${count+1}"/>
+            <tr onmouseover="changeTrBg(this)" onmouseout="defaultTrBg(this)">
+                <td align="right"><c:out value="${count }"/></td>
+                <td align="right"><a href="edit/${u.id }"><c:out value="${u.id }"/></a></td>
+                <td align="left"><a href="edit/${u.id }"><c:out value="${u.name }"/></a></td>
+                <td align="left"><a href="edit/${u.id }"><c:out value="${u.lastName }"/></a></td>
+                <td align="center"><a href="edit/${u.id }"><c:out value="${u.email }"/></a></td>
+                <td align="center">
+                    <c:choose>
+                        <c:when test="${u.active == 1 }">
+                            <font color="green"><s:message code="word.yes"/></font>
+                        </c:when>
+                        <c:otherwise>
+                            <font color="red"><s:message code="word.no"/></font>
+                        </c:otherwise>
+                    </c:choose>
+                </td>
+                <td align="center">
+                    <c:choose>
+                        <c:when test="${u.nrRoli == 1 }">
+                            <font color="green"><s:message code="word.admin"/></font>
+                        </c:when>
+                        <c:otherwise>
+                            <s:message code="word.user"/>
+                        </c:otherwise>
+                    </c:choose>
+                </td>
+            </tr>
+        </c:forEach>
+    </table>
+    <table width="1000" border="0" cellpadding="6" cellspacing="0" bgcolor="#ffddcc">
+        <tr>
+            <td width="300" align="left">
+                <s:message code="info.page"/> ${currentPage} <s:message code="info.from"/> ${totalPages}
+            </td>
+            <td align="right">
 
+                <c:if test="${currentPage > 1}">
+                    <input type="button"
+                           onclick="window.location.href='${pageContext.request.contextPath}/admin/users/${currentPage - 1}'"
+                           value="<s:message code="link.previous"/>"/>&nbsp;&nbsp;
+                </c:if>
 
-<c:forEach var="u" items="${userList}">
-    <td>
-        <td><c:out value="${u.id }"/></td>
-        <td><c:out value="${u.name }"/></td>
-        <td><c:out value="${u.lastName }"/></td>
-        <td><c:out value="${u.email }"/></td>
-        <td>
-            <c:choose>
-                <c:when test="${u.active == 1 }">
-                    <span style="color: green; "><s:message code="word.yes"/></span>
-                </c:when>
-                <c:otherwise>
-                    <span style="color: red; "><s:message code="word.no"/></span>
-                </c:otherwise>
-            </c:choose>
-        </td>
-    <td>
-        <c:choose>
-            <c:when test="${u.nrRoli == 1 }">
-                <s:message code="word.admin"/>
-            </c:when>
-            <c:otherwise>
-                <s:message code="word.user"/>
-            </c:otherwise>
-        </c:choose>
-    </td>
-    </tr>
-</c:forEach>
-</table>
+                <c:if test="${currentPage < totalPages}">
+                    <input type="button"
+                           onclick="window.location.href='${pageContext.request.contextPath}/admin/users/${currentPage + 1}'"
+                           value="<s:message code="link.next"/>"/>
+                </c:if>
+
+            </td>
+        </tr>
+    </table>
+</div>
 </body>
 </html>

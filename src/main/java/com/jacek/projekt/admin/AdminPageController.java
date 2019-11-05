@@ -1,11 +1,13 @@
 package com.jacek.projekt.admin;
 
 import com.jacek.projekt.user.User;
-import com.jacek.projekt.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -15,7 +17,7 @@ import java.util.List;
 public class AdminPageController {
 
     @Autowired
-    private UserService userService;
+    private AdminService adminService;
 
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
     @Secured(value = {"ROLE_ADMIN"})
@@ -23,27 +25,27 @@ public class AdminPageController {
         return "admin/admin";
     }
 
-    @RequestMapping(value = "/admin/users", method = RequestMethod.GET)
+    @RequestMapping(value = "/admin/users/{page}", method = RequestMethod.GET)
     @Secured(value = {"ROLE_ADMIN"})
-
-    public String openAdminAllUsersPage(Model model) {
-
-        List<User> userList = getAllUsers();
+    public String openAdminAllUsersPage(@PathVariable("page") int page, Model model) {
+        Page<User> pages = getAllUsersPageable(page - 1);
+        int totalPages = pages.getTotalPages();
+        int currentPage = pages.getNumber();
+        List<User> userList = pages.getContent();
+        model.addAttribute("totalPages", totalPages);
+        model.addAttribute("currentPage", currentPage + 1);
         model.addAttribute("userList", userList);
         return "admin/users";
     }
+
     //Pobranie listy użytkowników
-    private List<User> getAllUsers() {
-        List<User> usersList = userService.findAll();
-        for (User users : usersList) {
+    private Page<User> getAllUsersPageable(int page) {
+        int elements = 5;
+        Page<User> pages = adminService.findAll(PageRequest.of(page, elements));
+        for (User users : pages) {
             int numerRoli = users.getRoles().iterator().next().getId();
-          /*  if (numerRoli == 1) {
-                users.setNrRoli(numerRoli);
-            } else if (numerRoli == 2) {
-                users.setNrRoli(numerRoli);
-            }*/
             users.setNrRoli(numerRoli);
         }
-        return usersList;
+        return pages;
     }
 }

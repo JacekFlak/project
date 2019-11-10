@@ -6,11 +6,18 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <style type="text/css"><%@include file="/resources/css/style.css"%></style>
+    <style type="text/css">
+        <%@include file="/resources/css/style.css" %>
+    </style>
     <title><s:message code="profileEdit.pageName"/></title>
 </head>
 <body>
 <%@include file="/WEB-INF/incl/menu.app" %>
+
+<div align="right">
+    <s:message code="user.loginAs"/>
+    <c:out value="${user.email }"/>
+</div>
 
 <h2 align="center"><s:message code="profileEdit.pageName"/></h2>
 
@@ -53,7 +60,7 @@
             <td colspan="2" align="center" bgcolor="#fff">
                 <input type="submit" value="<s:message code="button.save"/>"/>
                 <input type="button" value="<s:message code="button.cancel"/>"
-                       onclick="window.location.href='${pageContext.request.contextPath}/'"/>
+                       onclick="window.location.href='${pageContext.request.contextPath}/profile'"/>
             </td>
         </tr>
 

@@ -7,14 +7,15 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <style type="text/css"><%@include file="/resources/css/style.css"%></style>
+    <style type="text/css">
+        <%@include file="/resources/css/style.css" %>
+    </style>
     <title><s:message code="login.pageName"/></title>
 </head>
 <body>
 <%@include file="/WEB-INF/incl/menu.app" %>
-<h2>
-    <s:message code="login.pageName"/>
-</h2>
+
+<h2><s:message code="login.pageName"/></h2>
 
 <form id="loginForm" action="/login" method="POST">
 
@@ -24,7 +25,7 @@
         <tr>
             <td colspan="2" align="center">
                 <c:if test="${not empty param.error}">
-                    <font color="red"><s:message code="error.login"/></font>
+                    <span style="color: red; "><s:message code="error.login"/></span>
                 </c:if>
             </td>
         </tr>
@@ -47,8 +48,8 @@
         </tr>
 
         <tr>
-            <td colspan="2" align="center" bgcolor="#ffffff"><input
-                    type="submit" value="Login"/></td>
+            <td colspan="2" align="center" bgcolor="#ffffff">
+                <input type="submit" value="<s:message code="button.login"/>"/></td>
         </tr>
 
     </table>

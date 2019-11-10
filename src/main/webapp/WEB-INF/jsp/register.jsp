@@ -7,7 +7,9 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <style type="text/css"><%@include file="/resources/css/style.css"%></style>
+    <style type="text/css">
+        <%@include file="/resources/css/style.css" %>
+    </style>
     <title><s:message code="menu.register"/></title>
 </head>
 <body>

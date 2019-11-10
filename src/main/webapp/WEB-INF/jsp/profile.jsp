@@ -6,11 +6,19 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <style type="text/css"><%@include file="/resources/css/style.css"%></style>
+    <style type="text/css">
+        <%@include file="/resources/css/style.css" %>
+    </style>
     <title><s:message code="profile.userData"/></title>
 </head>
 <body>
 <%@include file="/WEB-INF/incl/menu.app" %>
+
+<div align="right">
+    <s:message code="user.loginAs"/>
+    <c:out value="${user.email }"/>
+</div>
+
 <div allign="center">
     <h2><s:message code="profile.userData"/></h2>
 </div>

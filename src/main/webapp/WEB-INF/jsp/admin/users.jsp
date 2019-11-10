@@ -8,7 +8,9 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <style type="text/css"><%@include file="/resources/css/style.css"%></style>
+    <style type="text/css">
+        <%@include file="/resources/css/style.css" %>
+    </style>
     <title><s:message code="menu.users"/></title>
     <script type="text/javascript">
         function changeTrBg(row) {
@@ -21,6 +23,7 @@
     </script>
 </head>
 <body>
+
 <%@include file="/WEB-INF/incl/menu.app" %>
 <h2><s:message code="menu.users"/></h2>
 <c:set var="count" value="${recordStartCounter }"/>

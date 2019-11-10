@@ -8,7 +8,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+    <style type="text/css"><%@include file="/resources/css/style.css"%></style>
     <title><s:message code="menu.users"/></title>
     <script type="text/javascript">
         function changeTrBg(row) {

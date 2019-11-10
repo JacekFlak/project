@@ -11,9 +11,9 @@ public class MainPageController {
 
     private static final Logger LOG = LoggerFactory.getLogger(MainPageController.class);
 
-    @RequestMapping(value = {"/", "/index"}, method =  RequestMethod.GET)
+    @RequestMapping(value = {"/", "/index"}, method = RequestMethod.GET)
     public String showMainPage() {
-        LOG.info("************ showMainPage()");
+        LOG.info("************************ showMainPage() ************************");
         return "index";
     }
 }

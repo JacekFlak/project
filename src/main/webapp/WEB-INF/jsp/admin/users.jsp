@@ -23,9 +23,10 @@
     </script>
 </head>
 <body>
-
 <%@include file="/WEB-INF/incl/menu.app" %>
+
 <h2><s:message code="menu.users"/></h2>
+
 <c:set var="count" value="${recordStartCounter }"/>
 <div align="center">
     <div align="right" style="width: 1000px; padding: 2px;">

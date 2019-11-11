@@ -1,7 +1,12 @@
 package com.jacek.projekt.admin;
 
+import com.jacek.projekt.controllers.MainPageController;
 import com.jacek.projekt.user.User;
+import com.jacek.projekt.user.UserService;
+import com.jacek.projekt.utilities.UserUtilities;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.MessageSource;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -28,9 +33,19 @@ public class AdminPageController {
 
     private final MessageSource messageSource;
 
+    private final UserService userService;
+
+    private static final Logger LOG = LoggerFactory.getLogger(MainPageController.class);
+
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
     @Secured(value = {"ROLE_ADMIN"})
-    public String openAdminMainPage() {
+    public String openAdminMainPage(Model model) {
+        LOG.info("************************ openAdminMainPage() ************************");
+
+        String username = UserUtilities.getLoggedUser();
+        User user = userService.findUserByEmail(username);
+        model.addAttribute("user", user);
+
         return "admin/admin";
     }
 
@@ -45,6 +60,7 @@ public class AdminPageController {
         model.addAttribute("currentPage", currentPage + 1);
         model.addAttribute("userList", userList);
         model.addAttribute("recordStartCounter", currentPage * ELEMENTS);
+
         return "admin/users";
     }
 
@@ -65,6 +81,7 @@ public class AdminPageController {
         model.addAttribute("roleMap", roleMap);
         model.addAttribute("activityMap", activityMap);
         model.addAttribute("user", user);
+
         return "admin/useredit";
     }
 

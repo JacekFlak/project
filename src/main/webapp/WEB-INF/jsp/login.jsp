@@ -21,7 +21,6 @@
 
     <table width="350" border="0" cellpadding="4" cellspacing="1"
            align="center">
-
         <tr>
             <td colspan="2" align="center">
                 <c:if test="${not empty param.error}">

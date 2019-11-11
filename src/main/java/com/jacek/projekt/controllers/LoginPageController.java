@@ -16,5 +16,4 @@ public class LoginPageController {
         LOG.info("************************ showLoginPage() ************************");
         return "login";
     }
-
 }

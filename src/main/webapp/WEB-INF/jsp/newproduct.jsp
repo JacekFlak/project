@@ -29,7 +29,7 @@
 
         <tr>
             <td width="130" align="right"><s:message code="product.name"/></td>
-            <td width="270" align="left"><sf:input path="product_name" size="28" id="name"/></td>
+            <td width="270" align="left"><sf:input path="name" size="28" id="name"/></td>
         </tr>
 
         <tr>

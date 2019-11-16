@@ -25,7 +25,7 @@ public class AddProductController {
     @RequestMapping(value = "/addproduct", method = RequestMethod.POST)
     public String newProductAction(Product product, Model model) {
         String returnPage = "newproduct";
-        Product foundProduct = productService.findProductByName(product.getProduct_name());
+        Product foundProduct = productService.findProductByName(product.getName());
         productService.saveProduct(product);
         model.addAttribute("product", new Product());
         return returnPage;

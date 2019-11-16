@@ -14,13 +14,13 @@ public class ProductServiceImpl implements ProductService {
     private final ProductRepository productRepository;
 
     @Override
-    public Product findProductByName(String product_name) {
-        return productRepository.findByProductName(product_name);
+    public Product findProductByName(String name) {
+        return productRepository.findProductByName(name);
     }
 
     @Override
     public void saveProduct(Product product) {
-        /*product = productRepository.findProductName("");*/
+        //product = productRepository.findProductName("");
         productRepository.save(product);
     }
 

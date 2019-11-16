@@ -17,7 +17,7 @@ public class Product {
 
     @Column(name = "product_name")
     @NotNull
-    private String product_name;
+    private String name;
 
     @Column(name = "price_per_pack")
     @NotNull

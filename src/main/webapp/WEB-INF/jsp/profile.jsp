@@ -91,13 +91,12 @@
     <tr>
         <td align="center">
             <input type="button" value="<s:message code="button.editProfile"/>"
-                   onclick="window.location.href='${pageContext.request.contextPath}/editprofile'"/>
+                   onclick="window.location.href='${pageContext.request.contextPath}/editprofile'" class="formbutton"/>
         </td>
         <td align="center">
             <input type="button" value="<s:message code="button.changePassword"/>"
-                   onclick="window.location.href='${pageContext.request.contextPath}/editpassword'"/>
+                   onclick="window.location.href='${pageContext.request.contextPath}/editpassword'" class="formbutton"/>
         </td>
-
     </tr>
 </table>
 

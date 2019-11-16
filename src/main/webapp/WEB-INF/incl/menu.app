@@ -6,6 +6,7 @@
 			 <sec:authorize access="isAuthenticated()">
                     <a href="/requests"><s:message code="menu.requests"/></a>&nbsp;&nbsp;
                     <a href="/newrequest"><s:message code="menu.newRequest"/></a>&nbsp;&nbsp;
+                    <a href="/newproduct"><s:message code="menu.newProduct"/></a>&nbsp;&nbsp;
               </sec:authorize>
 
 		</td>
@@ -13,6 +14,7 @@
 		<td align="right">
 		<sec:authorize access="hasRole('ROLE_ADMIN')">
         				<a href="/admin"><s:message code="menu.adminPage"/></a>&nbsp;&nbsp;
+
         </sec:authorize>
 
 		<sec:authorize access="hasRole('ANONYMOUS')">

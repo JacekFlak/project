@@ -33,6 +33,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Value("${spring.queries.roles-query}")
     private String rolesQuery;
 
+    @Value ("${spring.queries.products-query}")
+    private String productsQuery;
+
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication().usersByUsernameQuery(usersQuery)
                 .authoritiesByUsernameQuery(rolesQuery)
@@ -47,7 +50,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/login").permitAll()
                 .antMatchers("/register").permitAll()
                 .antMatchers("/adduser").permitAll()
-                .antMatchers("/activatelink/**").permitAll()
                 .anyRequest().authenticated()
                 .and().csrf().disable()
                 .formLogin()

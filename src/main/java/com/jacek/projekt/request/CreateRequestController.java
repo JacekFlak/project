@@ -1,8 +1,6 @@
-package com.jacek.projekt.controllers;
+package com.jacek.projekt.request;
 
-import com.jacek.projekt.user.User;
-import com.jacek.projekt.user.UserService;
-import com.jacek.projekt.utilities.UserUtilities;
+import com.jacek.projekt.controllers.MainPageController;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.access.annotation.Secured;
@@ -14,23 +12,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class CreateRequestController {
 
-    private static UserService userService;
-
-    public CreateRequestController(UserService userService) {
-        this.userService = userService;
-    }
-
     private static final Logger LOG = LoggerFactory.getLogger(MainPageController.class);
 
     @RequestMapping(value = "/newrequest", method = RequestMethod.GET)
-    @Secured(value = {"ROLE_USER", "ROLE_ADMIN"})
+    @Secured(value = {"ROLE_USER"})
     public String showCreateRequestPage(Model model) {
+        model.addAttribute("request", new Request());
         LOG.info("************************ showRequestsPage() ************************");
-
-        String username = UserUtilities.getLoggedUser();
-        User user = userService.findUserByEmail(username);
-        model.addAttribute("user", user);
-
         return "newrequest";
     }
 }

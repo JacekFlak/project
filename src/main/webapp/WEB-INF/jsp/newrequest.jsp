@@ -16,44 +16,7 @@
 <body>
 <%@include file="/WEB-INF/incl/menu.app" %>
 
-<div align="right">
-    <s:message code="user.loginAs"/>
-    <c:out value="${user.email }"/>
-</div>
-
 <h2><s:message code="menu.newRequest"/></h2>
-
-<%--<sf:form id="requestForm" action="createRequest" modelAttribute="request" enctype="multipart/form-data" method="POST">--%>
-
-<table width="500" border="0" cellpadding="4" cellspacing="1"
-       align="center">
-
-    <tr>
-        <td width="130" align="right"><s:message code="request.name"/></td>
-        <td width="270" align="left"><sf:input path="name" size="28" id="name"/></td>
-    </tr>
-
-    <tr>
-        <td width="130" align="right"><s:message code="request.product"/></td>
-
-    </tr>
-
-    <tr>
-        <td width="130" align="right"><s:message code="request.responsible"/></td>
-
-    </tr>
-
-    <tr>
-        <td colspan="2" align="center" bgcolor="#fff">
-            <input type="submit" value="<s:message code="button.create.request"/>" class="formbutton"/>
-            <input type="button" value="<s:message code="button.cancel"/>" class="formbutton"
-            <%--onclick="window.location.href='${pageContext.request.contextPath}/'"--%>/>
-        </td>
-    </tr>
-
-</table>
-
-<%--</sf:form>--%>
 
 </body>
 </html>

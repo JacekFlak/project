@@ -1,5 +1,8 @@
 package com.jacek.projekt.user;
 
+import com.jacek.projekt.controllers.MainPageController;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.jacek.projekt.utilities.UserUtilities;
 import com.jacek.projekt.validators.ChangePasswordValidator;
 import com.jacek.projekt.validators.EditUserProfileValidator;
@@ -18,13 +21,17 @@ import java.util.Locale;
 @RequiredArgsConstructor
 public class ProfilController {
 
+    private static final Logger LOG = LoggerFactory.getLogger(MainPageController.class);
+
     private final UserService userService;
 
     private final MessageSource messageSource;
 
     @RequestMapping(value = "/profile", method = RequestMethod.GET)
-    @Secured(value = {"ROLE_USER", "ROLE_ADMIN","ROLE_PRICING","ROLE_TRADER"})
+    @Secured(value = {"ROLE_USER", "ROLE_ADMIN", "ROLE_PRICING", "ROLE_TRADER"})
     public String showUserProfilePage(Model model) {
+        LOG.info("************************ showProfilePage() ************************");
+
         String username = UserUtilities.getLoggedUser();
 
         User user = userService.findUserByEmail(username);
@@ -82,5 +89,4 @@ public class ProfilController {
         }
         return returnPage;
     }
-
 }

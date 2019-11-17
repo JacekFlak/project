@@ -1,5 +1,7 @@
 package com.jacek.projekt.store;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
@@ -16,11 +18,12 @@ public class AddStoreController {
     private final StoreService storeService;
     private final MessageSource messageSource;
 
-    /*private static final Logger LOG = LoggerFactory.getLogger(MainPageController.class);*/
+    private static final Logger LOG = LoggerFactory.getLogger(AddStoreController.class);
 
     @RequestMapping(value = "/newstore", method = RequestMethod.GET)
     public String storesForm(Model model) {
         model.addAttribute("store", new Store());
+        LOG.info("************************ showAddProductPage() ************************");
         return "newstore";
     }
 

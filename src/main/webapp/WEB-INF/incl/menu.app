@@ -6,7 +6,7 @@
 			 <sec:authorize access="hasRole('ROLE_USER')">
                     <a href="/requests"><s:message code="menu.requests"/></a>&nbsp;&nbsp;
                     <a href="/newrequest"><s:message code="menu.newRequest"/></a>&nbsp;&nbsp;
-              </sec:authorize>
+             </sec:authorize>
 
                 <sec:authorize access="hasRole('ROLE_TRADER')">
                     <a href="/newproduct"><s:message code="menu.newProduct"/></a>&nbsp;&nbsp;

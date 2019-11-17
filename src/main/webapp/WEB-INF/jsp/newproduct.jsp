@@ -17,6 +17,9 @@
 
 <h2><s:message code="menu.newProduct"/></h2>
 
+<p align="center">
+  <a> <c:out value="${message}"/> </a>
+</p>
 
 <sf:form id="productsForm" action="addproduct" modelAttribute="product"
          enctype="multipart/form-data" method="POST">
@@ -30,14 +33,35 @@
         </tr>
 
         <tr>
+            <td colspan="2" align="center"><font color="red"><sf:errors path="name"/></font></td>
+        </tr>
+
+        <tr>
             <td width="130" align="right"><s:message code="product.quantity_per_pack"/></td>
             <td width="270" align="left"><sf:input path="quantity_per_pack"
                                                    size="28"/></td>
         </tr>
 
         <tr>
+            <td colspan="2" align="center"><font color="red"><sf:errors path="quantity_per_pack"/></font></td>
+        </tr>
+
+        <tr>
             <td width="130" align="right"><s:message code="product.price_per_pack"/></td>
             <td width="270" align="left"><sf:input path="price_per_pack" size="28"/></td>
+        </tr>
+
+        <tr>
+            <td colspan="2" align="center"><font color="red"><sf:errors path="price_per_pack"/></font></td>
+        </tr>
+
+        <tr>
+            <td width="130" align="right"><s:message code="product.description"/></td>
+            <td width="270" align="left"><sf:input path="description" size="45"/></td>
+        </tr>
+
+        <tr>
+            <td colspan="2" align="center"><font color="red"><sf:errors path="description"/></font></td>
         </tr>
 
         <tr>

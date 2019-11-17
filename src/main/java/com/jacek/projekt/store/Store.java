@@ -12,34 +12,34 @@ public class Store {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name="store_id")
+    @Column(name = "store_id")
     private int id;
 
-    @Column(name="name")
+    @Column(name = "name")
     @NotNull
     private String name;
 
-    @Column(name="city")
+    @Column(name = "city")
     @NotNull
     private String city;
 
-    @Column(name="street")
+    @Column(name = "street")
     @NotNull
     private String street;
 
-    @Column(name="number")
+    @Column(name = "number")
     @NotNull
     private String number;
 
-    @Column(name="country")
+    @Column(name = "country")
     @NotNull
     private String country;
 
-    @Column(name="email")
+    @Column(name = "email")
     @NotNull
     private String email;
 
-    @Column(name="phone")
+    @Column(name = "phone")
     @NotNull
     private int phone;
 }

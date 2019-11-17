@@ -17,8 +17,8 @@
 
 <h2><s:message code="menu.newStore"/></h2>
 
-<p align="center">
-    <c:out value="${message}"/>
+<a align="center">
+    <a><c:out value="${message}"/></a>
 </p>
 
 <sf:form id="storesForm" action="addstore" modelAttribute="store"
@@ -33,9 +33,17 @@
         </tr>
 
         <tr>
+            <td colspan="2" align="center"><span style="color: red; "><sf:errors path="name"/></span></td>
+        </tr>
+
+        <tr>
             <td width="130" align="right"><s:message code="store.street"/></td>
             <td width="270" align="left"><sf:input path="street"
                                                    size="28"/></td>
+        </tr>
+
+        <tr>
+            <td colspan="2" align="center"><span style="color: red; "><sf:errors path="street"/></span></td>
         </tr>
 
         <tr>
@@ -44,8 +52,16 @@
         </tr>
 
         <tr>
+            <td colspan="2" align="center"><span style="color: red; "><sf:errors path="number"/></span></td>
+        </tr>
+
+        <tr>
             <td width="130" align="right"><s:message code="store.city"/></td>
             <td width="270" align="left"><sf:input path="city" size="28"/></td>
+        </tr>
+
+        <tr>
+            <td colspan="2" align="center"><span style="color: red; "><sf:errors path="city"/></span></td>
         </tr>
 
         <tr>
@@ -54,13 +70,25 @@
         </tr>
 
         <tr>
+            <td colspan="2" align="center"><span style="color: red; "><sf:errors path="country"/></span></td>
+        </tr>
+
+        <tr>
             <td width="130" align="right"><s:message code="store.email"/></td>
             <td width="270" align="left"><sf:input path="email" size="28"/></td>
         </tr>
 
         <tr>
+            <td colspan="2" align="center"><span style="color: red; "><sf:errors path="email"/></span></td>
+        </tr>
+
+        <tr>
             <td width="130" align="right"><s:message code="store.phone"/></td>
             <td width="270" align="left"><sf:input path="phone" size="28"/></td>
+        </tr>
+
+        <tr>
+            <td colspan="2" align="center"><span style="color: red; "><sf:errors path="phone"/></span></td>
         </tr>
 
         <tr>

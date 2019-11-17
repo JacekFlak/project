@@ -39,6 +39,7 @@ a {
     text-decoration: none;
 }
 
+
 a:hover {
     font-size: 14px;
     font-family: sans-serif;
@@ -64,4 +65,10 @@ a:hover {
 
 .formbutton:hover {
     border: 1px solid red;
+}
+
+#copyright {
+    padding-top: 450px;
+    text-align: center;
+    width: 100%;
 }

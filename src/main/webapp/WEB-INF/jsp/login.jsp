@@ -48,10 +48,16 @@
 
         <tr>
             <td colspan="2" align="center" bgcolor="#ffffff">
-                <input type="submit" value="<s:message code="button.login"/>"/></td>
+                <input type="submit" value="<s:message code="button.login"/>" class="formbutton"/></td>
         </tr>
-
     </table>
+
 </form>
+
+<div id="copyright">
+    <a><s:message code="info.title"/></a><br>
+    <s:message code="info.author"/>
+</div>
+
 </body>
 </html>

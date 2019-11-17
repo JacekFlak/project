@@ -33,7 +33,7 @@
         </tr>
 
         <tr>
-            <td colspan="2" align="center"><font color="red"><sf:errors path="name"/></font></td>
+            <td colspan="2" align="center"><span style="color: red; "><sf:errors path="name"/></span></td>
         </tr>
 
         <tr>
@@ -43,7 +43,7 @@
         </tr>
 
         <tr>
-            <td colspan="2" align="center"><font color="red"><sf:errors path="quantity_per_pack"/></font></td>
+            <td colspan="2" align="center"><span style="color: red; "><sf:errors path="quantity_per_pack"/></span></td>
         </tr>
 
         <tr>
@@ -52,7 +52,7 @@
         </tr>
 
         <tr>
-            <td colspan="2" align="center"><font color="red"><sf:errors path="price_per_pack"/></font></td>
+            <td colspan="2" align="center"><span style="color: red; "><sf:errors path="price_per_pack"/></span></td>
         </tr>
 
         <tr>
@@ -61,7 +61,7 @@
         </tr>
 
         <tr>
-            <td colspan="2" align="center"><font color="red"><sf:errors path="description"/></font></td>
+            <td colspan="2" align="center"><span style="color: red; "><sf:errors path="description"/></span></td>
         </tr>
 
         <tr>

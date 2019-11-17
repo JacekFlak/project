@@ -39,8 +39,8 @@
             <td width="190" align="center"><b><s:message code="register.name"/></b></td>
             <td width="190" align="center"><b><s:message code="register.lastName"/></b></td>
             <td width="200" align="center"><b><s:message code="register.email"/></b></td>
-            <td width="100" align="center"><b><s:message code="profile.isActive"/></b></td>
-            <td width="190" align="center"><b><s:message code="profile.role"/></b></td>
+            <td width="100" align="center"><b><s:message code="profile.role"/></b></td>
+            <td width="190" align="center"><b><s:message code="profile.isActive"/></b></td>
             <td width="50"></td>
         </tr>
         <c:forEach var="u" items="${userList }">

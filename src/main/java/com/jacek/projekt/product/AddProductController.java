@@ -7,6 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.util.Locale;
+
 @Controller
 @RequiredArgsConstructor
 public class AddProductController {
@@ -23,10 +25,11 @@ public class AddProductController {
     }
 
     @RequestMapping(value = "/addproduct", method = RequestMethod.POST)
-    public String newProductAction(Product product, Model model) {
+    public String newProductAction(Product product, Model model, Locale locale) {
         String returnPage = "newproduct";
         Product foundProduct = productService.findProductByName(product.getName());
         productService.saveProduct(product);
+        model.addAttribute("message", messageSource.getMessage("product.added.success", null, locale));
         model.addAttribute("product", new Product());
         return returnPage;
     }

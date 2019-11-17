@@ -20,6 +20,7 @@
     <s:message code="user.loginAs"/>
     <c:out value="${user.email }"/>
 </div>
+
 <h2><s:message code="menu.newRequest"/></h2>
 
 <p align="center">

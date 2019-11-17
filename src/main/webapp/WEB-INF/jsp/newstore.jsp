@@ -10,39 +10,59 @@
     <style type="text/css">
         <%@include file="/resources/css/style.css" %>
     </style>
-    <title><s:message code="menu.newProduct"/></title>
+    <title><s:message code="menu.newStore"/></title>
 </head>
 <body>
 <%@include file="/WEB-INF/incl/menu.app" %>
 
-<h2><s:message code="menu.newProduct"/></h2>
+<h2><s:message code="menu.newStore"/></h2>
 
 
-<sf:form id="productsForm" action="addproduct" modelAttribute="product"
+<sf:form id="storesForm" action="addstore" modelAttribute="store"
          enctype="multipart/form-data" method="POST">
 
     <table width="500" border="0" cellpadding="4" cellspacing="1"
            align="center">
 
         <tr>
-            <td width="130" align="right"><s:message code="product.name"/></td>
+            <td width="130" align="right"><s:message code="store.name"/></td>
             <td width="270" align="left"><sf:input path="name" size="28" id="name"/></td>
         </tr>
 
         <tr>
-            <td width="130" align="right"><s:message code="product.quantity_per_pack"/></td>
-            <td width="270" align="left"><sf:input path="quantity_per_pack"
+            <td width="130" align="right"><s:message code="store.street"/></td>
+            <td width="270" align="left"><sf:input path="street"
                                                    size="28"/></td>
         </tr>
 
         <tr>
-            <td width="130" align="right"><s:message code="product.price_per_pack"/></td>
-            <td width="270" align="left"><sf:input path="price_per_pack" size="28"/></td>
+            <td width="130" align="right"><s:message code="store.number"/></td>
+            <td width="270" align="left"><sf:input path="number" size="28"/></td>
+        </tr>
+
+        <tr>
+            <td width="130" align="right"><s:message code="store.city"/></td>
+            <td width="270" align="left"><sf:input path="city" size="28"/></td>
+        </tr>
+
+        <tr>
+            <td width="130" align="right"><s:message code="store.country"/></td>
+            <td width="270" align="left"><sf:input path="country" size="28"/></td>
+        </tr>
+
+        <tr>
+            <td width="130" align="right"><s:message code="store.email"/></td>
+            <td width="270" align="left"><sf:input path="email" size="28"/></td>
+        </tr>
+
+        <tr>
+            <td width="130" align="right"><s:message code="store.phone"/></td>
+            <td width="270" align="left"><sf:input path="phone" size="28"/></td>
         </tr>
 
         <tr>
             <td colspan="2" align="center" bgcolor="#fff">
-                <input type="submit" value="<s:message code="button.add.product"/>" class="formbutton"/>
+                <input type="submit" value="<s:message code="button.add.store"/>" class="formbutton"/>
                 <input type="button" value="<s:message code="button.cancel"/>" class="formbutton"
                        onclick="window.location.href='${pageContext.request.contextPath}/'"/>
             </td>

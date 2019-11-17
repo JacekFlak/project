@@ -7,6 +7,7 @@
                     <a href="/requests"><s:message code="menu.requests"/></a>&nbsp;&nbsp;
                     <a href="/newrequest"><s:message code="menu.newRequest"/></a>&nbsp;&nbsp;
                     <a href="/newproduct"><s:message code="menu.newProduct"/></a>&nbsp;&nbsp;
+                    <a href="/newstore"><s:message code="menu.newStore"/></a>&nbsp;&nbsp;
               </sec:authorize>
 
 		</td>

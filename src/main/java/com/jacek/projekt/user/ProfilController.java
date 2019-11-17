@@ -23,7 +23,7 @@ public class ProfilController {
     private final MessageSource messageSource;
 
     @RequestMapping(value = "/profile", method = RequestMethod.GET)
-    @Secured(value = {"ROLE_USER", "ROLE_ADMIN"})
+    @Secured(value = {"ROLE_USER", "ROLE_ADMIN","ROLE_PRICING","ROLE_TRADER"})
     public String showUserProfilePage(Model model) {
         String username = UserUtilities.getLoggedUser();
 

@@ -51,6 +51,29 @@
                 <td align="left"><a href="edit/${u.id }"><c:out value="${u.name }"/></a></td>
                 <td align="left"><a href="edit/${u.id }"><c:out value="${u.lastName }"/></a></td>
                 <td align="center"><a href="edit/${u.id }"><c:out value="${u.email }"/></a></td>
+
+                <td align="center">
+                    <c:choose>
+
+                    <c:when test="${u.nrRoli == 1 }">
+                        <span style="color: blue; "><s:message code="word.admin"/></span>
+                    </c:when>
+
+                    <c:when test="${u.nrRoli == 2 }">
+                        <span style="color: black; "><s:message code="word.user"/></span>
+                    </c:when>
+
+                    <c:when test="${u.nrRoli == 3 }">
+                        <span style="color: black; "><s:message code="word.pricing"/></span>
+                    </c:when>
+
+                    <c:otherwise>
+                    <span style="color: black; "><s:message code="word.trader"/>
+                        </c:otherwise>
+
+                    </c:choose>
+                </td>
+
                 <td align="center">
                     <c:choose>
                         <c:when test="${u.active == 1 }">
@@ -58,16 +81,6 @@
                         </c:when>
                         <c:otherwise>
                             <font color="red"><s:message code="word.no"/></font>
-                        </c:otherwise>
-                    </c:choose>
-                </td>
-                <td align="center">
-                    <c:choose>
-                        <c:when test="${u.nrRoli == 1 }">
-                            <font color="green"><s:message code="word.admin"/></font>
-                        </c:when>
-                        <c:otherwise>
-                            <s:message code="word.user"/>
                         </c:otherwise>
                     </c:choose>
                 </td>

@@ -3,12 +3,15 @@
 		<td align="left" width="900">
 			<a href="/"><s:message code="menu.mainPage"/></a>&nbsp;&nbsp;
 
-			 <sec:authorize access="isAuthenticated()">
+			 <sec:authorize access="hasRole('ROLE_USER')">
                     <a href="/requests"><s:message code="menu.requests"/></a>&nbsp;&nbsp;
                     <a href="/newrequest"><s:message code="menu.newRequest"/></a>&nbsp;&nbsp;
+              </sec:authorize>
+
+                <sec:authorize access="hasRole('ROLE_TRADER')">
                     <a href="/newproduct"><s:message code="menu.newProduct"/></a>&nbsp;&nbsp;
                     <a href="/newstore"><s:message code="menu.newStore"/></a>&nbsp;&nbsp;
-              </sec:authorize>
+                </sec:authorize>
 
 		</td>
 
@@ -20,7 +23,6 @@
 
 		<sec:authorize access="hasRole('ANONYMOUS')">
 			<a href="/login"><s:message code="menu.login"/></a>&nbsp;&nbsp;
-
 		</sec:authorize>
 
 		<sec:authorize access="isAuthenticated()">

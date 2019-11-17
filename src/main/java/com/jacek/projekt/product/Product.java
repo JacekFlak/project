@@ -27,6 +27,10 @@ public class Product {
     @NotNull
     private int quantity_per_pack;
 
+    @Column(name ="description")
+    @NotNull
+    private String description;
+
   /*  @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))*/
 

@@ -14,11 +14,6 @@
 <body>
 <%@include file="/WEB-INF/incl/menu.app" %>
 
-<div align="right">
-    <s:message code="user.loginAs"/>
-    <c:out value="${user.email }"/>
-</div>
-
 <div allign="center">
     <h2><s:message code="profile.userData"/></h2>
 </div>
@@ -27,7 +22,7 @@
 
     <tr>
         <td width="130" align="right">
-            <s:message code="register.email"/>
+            <s:message code="profile.email"/>
         </td>
         <td width="270" align="left">
             <c:out value="${user.email }"/>
@@ -36,7 +31,7 @@
 
     <tr>
         <td width="130" align="right">
-            <s:message code="register.name"/>
+            <s:message code="profile.name"/>
         </td>
         <td width="270" align="left">
             <c:out value="${user.name }"/>
@@ -45,7 +40,7 @@
 
     <tr>
         <td width="130" align="right">
-            <s:message code="register.lastName"/>
+            <s:message code="profile.lastName"/>
         </td>
         <td width="270" align="left">
             <c:out value="${user.lastName }"/>

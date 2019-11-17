@@ -23,10 +23,6 @@
 
 <h2><s:message code="menu.newRequest"/></h2>
 
-<p align="center">
-    <c:out value="${message }"/>
-</p>
-
 <%--<sf:form id="requestForm" action="createRequest" modelAttribute="request" enctype="multipart/form-data" method="POST">--%>
 
 <table width="500" border="0" cellpadding="4" cellspacing="1"

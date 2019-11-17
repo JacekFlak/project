@@ -15,11 +15,11 @@
 <body>
 <%@include file="/WEB-INF/incl/menu.app" %>
 
-<h2><s:message code="menu.register"/></h2>
-
 <p align="center">
-    <c:out value="${message }"/>
+    <a> <c:out value="${message}"/> </a>
 </p>
+
+<h2><s:message code="menu.register"/></h2>
 
 <sf:form id="usersForm" action="adduser" modelAttribute="user"
          enctype="multipart/form-data" method="POST">

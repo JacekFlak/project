@@ -15,12 +15,12 @@
 		<td align="right">
 		<sec:authorize access="hasRole('ROLE_ADMIN')">
         				<a href="/admin"><s:message code="menu.adminPage"/></a>&nbsp;&nbsp;
-
+                        <a href="/register"><s:message code="menu.register"/></a>&nbsp;&nbsp;
         </sec:authorize>
 
 		<sec:authorize access="hasRole('ANONYMOUS')">
 			<a href="/login"><s:message code="menu.login"/></a>&nbsp;&nbsp;
-			<a href="/register"><s:message code="menu.register"/></a>&nbsp;&nbsp;
+
 		</sec:authorize>
 
 		<sec:authorize access="isAuthenticated()">

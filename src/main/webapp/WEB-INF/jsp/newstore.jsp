@@ -17,6 +17,9 @@
 
 <h2><s:message code="menu.newStore"/></h2>
 
+<p align="center">
+    <c:out value="${message}"/>
+</p>
 
 <sf:form id="storesForm" action="addstore" modelAttribute="store"
          enctype="multipart/form-data" method="POST">

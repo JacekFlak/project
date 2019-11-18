@@ -15,13 +15,19 @@ public class Request {
     @Column(name = "request_id")
     private int id;
 
-    @Column(name = "store_id")
+    /*@Column(name = "store_id")
     @NotNull
     private String email;
 
     @Column(name = "product_id")
     @NotNull
-    private String product_id;
+    private String product_id;*/
+    //tutaj wstawic relacje  jak te
+
+    /*  @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+    private Set<Role> roles;*/
+
 
     @Column(name = "quantity")
     @NotNull
@@ -30,9 +36,5 @@ public class Request {
     @Column(name = "description")
     @NotNull
     private String description;
-
-/*  @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private Set<Role> roles;*/
 
 }

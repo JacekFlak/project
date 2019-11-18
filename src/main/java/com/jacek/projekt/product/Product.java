@@ -13,7 +13,7 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "product_id")
-    private int product_id;
+    private int id;
 
     @Column(name = "product_name")
     @NotNull

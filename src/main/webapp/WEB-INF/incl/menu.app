@@ -21,6 +21,11 @@
                         <a href="/register"><s:message code="menu.register"/></a>&nbsp;&nbsp;
         </sec:authorize>
 
+        <sec:authorize access="hasRole('ROLE_TRADER')">
+                    <a href="/trader"><s:message code="menu.trader"/></a>&nbsp;&nbsp;
+        </sec:authorize>
+
+
 		<sec:authorize access="hasRole('ANONYMOUS')">
 			<a href="/login"><s:message code="menu.login"/></a>&nbsp;&nbsp;
 		</sec:authorize>

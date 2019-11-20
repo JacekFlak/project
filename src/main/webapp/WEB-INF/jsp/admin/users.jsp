@@ -33,7 +33,7 @@
         <input type="hidden" name="cp" id="cp" value="${currentPage}"/>
     </div>
     <table width="1000" border="0" cellpadding="6" cellspacing="2">
-        <tr bgcolor="#ffddcc">
+        <tr bgcolor="#70a5ff">
             <td width="40" align="center"></td>
             <td width="40" align="center"><b><s:message code="admin.user.id"/></b></td>
             <td width="190" align="center"><b><s:message code="register.name"/></b></td>
@@ -77,17 +77,17 @@
                 <td align="center">
                     <c:choose>
                         <c:when test="${u.active == 1 }">
-                            <font color="green"><s:message code="word.yes"/></font>
+                            <span style="color: green; "><s:message code="word.yes"/></span>
                         </c:when>
                         <c:otherwise>
-                            <font color="red"><s:message code="word.no"/></font>
+                            <span style="color: red; "><s:message code="word.no"/></span>
                         </c:otherwise>
                     </c:choose>
                 </td>
             </tr>
         </c:forEach>
     </table>
-    <table width="1000" border="0" cellpadding="6" cellspacing="0" bgcolor="#ffddcc">
+    <table width="1000" border="0" cellpadding="6" cellspacing="0" bgcolor="#70a5ff">
         <tr>
             <td width="300" align="left">
                 <s:message code="info.page"/> ${currentPage} <s:message code="info.from"/> ${totalPages}

@@ -33,7 +33,7 @@
         <input type="hidden" name="cp" id="cp" value="${currentPage}"/>
     </div>
     <table width="1000" border="0" cellpadding="6" cellspacing="2">
-        <tr bgcolor="#ffddcc">
+        <tr bgcolor="#70a5ff">
             <td width="40" align="center"></td>
             <td width="190" align="center"><b><s:message code="product.name"/></b></td>
             <td width="190" align="center"><b><s:message code="product.price_per_pack"/></b></td>
@@ -52,7 +52,7 @@
             </tr>
         </c:forEach>
     </table>
-    <table width="1000" border="0" cellpadding="6" cellspacing="0" bgcolor="#ffddcc">
+    <table width="1000" border="0" cellpadding="6" cellspacing="0" bgcolor="#70a5ff">
         <tr>
             <td width="300" align="left">
                 <s:message code="info.page"/> ${currentPage} <s:message code="info.from"/> ${totalPages}

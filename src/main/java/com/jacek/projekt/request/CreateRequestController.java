@@ -6,15 +6,14 @@ import org.slf4j.LoggerFactory;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class CreateRequestController {
 
     private static final Logger LOG = LoggerFactory.getLogger(MainPageController.class);
 
-    @RequestMapping(value = "/newrequest", method = RequestMethod.GET)
+    @GetMapping("/newrequest")
     @Secured(value = {"ROLE_USER"})
     public String showCreateRequestPage(Model model) {
         model.addAttribute("request", new Request());

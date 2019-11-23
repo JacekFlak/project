@@ -25,6 +25,10 @@
 <body>
 <%@include file="/WEB-INF/incl/menu.app" %>
 
+<h2><s:message code="menu.adminPage"/></h2>
+
+<%@include file="/WEB-INF/incl/admenu.app" %>
+
 <h2><s:message code="menu.users"/></h2>
 
 <c:set var="count" value="${recordStartCounter }"/>

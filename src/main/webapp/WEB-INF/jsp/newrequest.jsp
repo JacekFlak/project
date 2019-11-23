@@ -42,8 +42,9 @@
             <td width="130" align="right"><s:message code="request.product"/></td>
 
             <td width="270" align="left"><select>
-                <option value="11"></option>
-                <option value="22"></option>
+                <c:forEach var="p" items="${productList}">
+                    <c:out value="${p.name }"/>
+                </c:forEach>
             </select></td>
         </tr>
 

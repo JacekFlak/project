@@ -1,15 +1,15 @@
 package com.jacek.projekt.product;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import com.jacek.projekt.validators.NewProductValidator;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.Locale;
 
@@ -22,14 +22,14 @@ public class AddProductController {
 
     private static final Logger LOG = LoggerFactory.getLogger(AddProductController.class);
 
-    @RequestMapping(value = "/newproduct", method = RequestMethod.GET)
+    @GetMapping("/newproduct")
     public String productsForm(Model model) {
         model.addAttribute("product", new Product());
         LOG.info("************************ showAddProductPage() ************************");
         return "newproduct";
     }
 
-    @RequestMapping(value = "/addproduct", method = RequestMethod.POST)
+    @PostMapping("/addproduct")
     public String newProductAction(Product product, BindingResult result, Model model, Locale locale) {
         String returnPage = "newproduct";
 

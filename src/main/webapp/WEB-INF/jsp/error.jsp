@@ -14,11 +14,6 @@
 <body>
 <%@include file="/WEB-INF/incl/menu.app" %>
 
-<div align="right">
-    <s:message code="user.loginAs"/>
-    <c:out value="${user.email }"/>
-</div>
-
 <h2>
     <s:message code="error.defaultErrorMessage"/>
 </h2>

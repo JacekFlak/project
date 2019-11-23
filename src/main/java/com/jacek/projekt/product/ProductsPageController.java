@@ -12,9 +12,8 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
@@ -30,7 +29,7 @@ public class ProductsPageController {
 
     private static final Logger LOG = LoggerFactory.getLogger(MainPageController.class);
 
-    @RequestMapping(value = "/trader", method = RequestMethod.GET)
+    @GetMapping("/trader")
     @Secured(value = {"ROLE_TRADER"})
     public String openProductsPage(Model model) {
         LOG.info("************************ openTraderPage() ************************");
@@ -42,7 +41,7 @@ public class ProductsPageController {
         return "trader/trader";
     }
 
-    @RequestMapping(value = "/trader/products/{page}", method = RequestMethod.GET)
+    @GetMapping("/trader/products/{page}")
     @Secured(value = {"ROLE_TRADER"})
     public String openTraderAllProductsPage(@PathVariable("page") int page, Model model) {
         Page<Product> pages = getAllProductsPageable(page - 1);

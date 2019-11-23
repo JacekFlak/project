@@ -8,8 +8,8 @@ import org.springframework.context.MessageSource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.Locale;
 
@@ -22,17 +22,16 @@ public class AddStoreController {
 
     private static final Logger LOG = LoggerFactory.getLogger(AddStoreController.class);
 
-    @RequestMapping(value = "/newstore", method = RequestMethod.GET)
+    @GetMapping("/newstore")
     public String storesForm(Model model) {
         model.addAttribute("store", new Store());
         LOG.info("************************ showAddStorePage() ************************");
         return "newstore";
     }
 
-    @RequestMapping(value = "/addstore", method = RequestMethod.POST)
+    @PostMapping("/addstore")
     public String newStoreAction(Store store, BindingResult result, Model model, Locale locale) {
         String returnPage = "newstore";
-
         new NewStoreValidator().validate(store, result);
         if (!result.hasErrors()) {
             storeService.saveStore(store);

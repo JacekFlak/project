@@ -1,19 +1,19 @@
 package com.jacek.projekt.user;
 
 import com.jacek.projekt.controllers.MainPageController;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import com.jacek.projekt.utilities.UserUtilities;
 import com.jacek.projekt.validators.ChangePasswordValidator;
 import com.jacek.projekt.validators.EditUserProfileValidator;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.MessageSource;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.Locale;
 
@@ -27,7 +27,7 @@ public class ProfilController {
 
     private final MessageSource messageSource;
 
-    @RequestMapping(value = "/profile", method = RequestMethod.GET)
+    @GetMapping("/profile")
     @Secured(value = {"ROLE_USER", "ROLE_ADMIN", "ROLE_PRICING", "ROLE_TRADER"})
     public String showUserProfilePage(Model model) {
         LOG.info("************************ showProfilePage() ************************");
@@ -45,7 +45,7 @@ public class ProfilController {
         return "profile";
     }
 
-    @RequestMapping(value = "/editpassword", method = RequestMethod.GET)
+    @GetMapping("/editpassword")
     public String editUserPassword(Model model) {
         String username = UserUtilities.getLoggedUser();
         User user = userService.findUserByEmail(username);
@@ -53,7 +53,7 @@ public class ProfilController {
         return "editpassword";
     }
 
-    @RequestMapping(value = "/updatepass", method = RequestMethod.POST)
+    @PostMapping("/updatepass")
     public String changeUSerPassword(User user, BindingResult result, Model model, Locale locale) {
         String returnPage = null;
         new ChangePasswordValidator().validate(user, result);
@@ -68,7 +68,7 @@ public class ProfilController {
         return returnPage;
     }
 
-    @RequestMapping(value = "/editprofile", method = RequestMethod.GET)
+    @GetMapping("/editprofile")
     public String changeUserData(Model model) {
         String username = UserUtilities.getLoggedUser();
         User user = userService.findUserByEmail(username);
@@ -76,7 +76,7 @@ public class ProfilController {
         return "editprofile";
     }
 
-    @RequestMapping(value = "/updateprofile", method = RequestMethod.POST)
+    @PostMapping("/updateprofile")
     public String changeUserDataAction(User user, BindingResult result, Model model, Locale locale) {
         String returnPage;
         new EditUserProfileValidator().validate(user, result);

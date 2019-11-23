@@ -13,10 +13,9 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.util.HashMap;
 import java.util.List;
@@ -37,7 +36,7 @@ public class AdminPageController {
 
     private static final Logger LOG = LoggerFactory.getLogger(MainPageController.class);
 
-    @RequestMapping(value = "/admin", method = RequestMethod.GET)
+    @GetMapping("/admin")
     @Secured(value = {"ROLE_ADMIN"})
     public String openAdminMainPage(Model model) {
         LOG.info("************************ openAdminMainPage() ************************");
@@ -49,7 +48,7 @@ public class AdminPageController {
         return "admin/admin";
     }
 
-    @RequestMapping(value = "/admin/users/{page}", method = RequestMethod.GET)
+    @GetMapping("/admin/users/{page}")
     @Secured(value = {"ROLE_ADMIN"})
     public String openAdminAllUsersPage(@PathVariable("page") int page, Model model) {
         Page<User> pages = getAllUsersPageable(page - 1);
@@ -64,7 +63,7 @@ public class AdminPageController {
         return "admin/users";
     }
 
-    @RequestMapping(value = "/admin/users/edit/{id}", method = RequestMethod.GET)
+    @GetMapping("/admin/users/edit/{id}")
     @Secured(value = {"ROLE_ADMIN"})
     public String getUserToEdit(@PathVariable("id") int id, Model model) {
         User user = new User();
@@ -85,7 +84,7 @@ public class AdminPageController {
         return "admin/useredit";
     }
 
-    @RequestMapping(value = "/admin/updateuser/{id}", method = RequestMethod.POST)
+    @PostMapping("/admin/updateuser/{id}")
     @Secured(value = "ROLE_ADMIN")
     public String updateUser(@PathVariable("id") int id, User user) {
         int nrRoli = user.getNrRoli();

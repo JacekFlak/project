@@ -5,5 +5,9 @@ import org.springframework.stereotype.Repository;
 
 @Repository("storeRepository")
 public interface StoreRepository extends JpaRepository<Store, Integer> {
-    Store findByName(String name);
+
+    Store findStoreByName(String name);
+
+    Store findStoreById(int id);
+
 }

@@ -4,8 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class ErrorPageController implements ErrorController {
@@ -17,7 +16,7 @@ public class ErrorPageController implements ErrorController {
         return "/error";
     }
 
-    @RequestMapping(value = "/error", method = RequestMethod.GET)
+    @GetMapping("/error")
     public String showErrorPage() {
 
         LOG.info("************************ showErrorPage() ************************");

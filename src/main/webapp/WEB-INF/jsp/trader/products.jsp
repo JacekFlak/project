@@ -25,6 +25,9 @@
 <body>
 <%@include file="/WEB-INF/incl/menu.app" %>
 
+<h2><s:message code="menu.trader"/></h2>
+<%@include file="/WEB-INF/incl/trmenu.app" %>
+
 <h2><s:message code="menu.Products"/></h2>
 
 <c:set var="count" value="${recordStartCounter }"/>
@@ -44,10 +47,10 @@
         <c:forEach var="p" items="${productList }">
             <c:set var="count" value="${count+1}"/>
             <tr onmouseover="changeTrBg(this)" onmouseout="defaultTrBg(this)">
-                <td align="right"><c:out value="${count }"/></td>
-                <td align="right"><c:out value="${p.name }"/></td>
-                <td align="left"><c:out value="${p.price_per_pack }"/></td>
-                <td align="left"><c:out value="${p.quantity_per_pack }"/></td>
+                <td align="center"><c:out value="${count }"/></td>
+                <td align="center"><c:out value="${p.name }"/></td>
+                <td align="center"><c:out value="${p.price_per_pack }"/></td>
+                <td align="center"><c:out value="${p.quantity_per_pack }"/></td>
                 <td align="center"><c:out value="${p.description }"/></td>
             </tr>
         </c:forEach>

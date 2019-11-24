@@ -88,6 +88,21 @@
                         </c:otherwise>
                     </c:choose>
                 </td>
+                <td>
+                    <c:choose>
+                        <c:when test="${u.nrRoli == 1 }">
+                            <%--<img src="../webapp/resources/images/deliconinact.png" width="16" height="16"/>--%>
+                        </c:when>
+                        <c:otherwise>
+                            <a href="delete/${u.id }">
+                                    <%--<img src="../webapp/resources/images/delicon.png" width="16" height="16"
+                                         title="<s:message code="delete.user"/>"/>--%>
+                                <s:message code="delete.user"/>
+                            </a>
+                        </c:otherwise>
+                    </c:choose>
+                </td>
+
             </tr>
         </c:forEach>
     </table>

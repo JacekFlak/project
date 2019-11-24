@@ -16,7 +16,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.ws.rs.DELETE;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
@@ -93,6 +95,14 @@ public class AdminPageController {
         return "redirect:/admin/users/1";
     }
 
+    @DELETE
+    @RequestMapping(value = "/admin/users/delete/{id}")
+    @Secured(value = "ROLE_ADMIN")
+    public String deleteUser(@PathVariable("id") int id) {
+        LOG.debug(" >>>>>>>>>>>>>>>> AdminPageController.deleteUser -> " + id);
+        adminService.deleteUserById(id);
+        return "redirect:/admin/users/1";
+    }
 
     //Pobranie listy użytkowników
     private Page<User> getAllUsersPageable(int page) {

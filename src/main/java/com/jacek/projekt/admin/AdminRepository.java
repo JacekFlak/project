@@ -20,4 +20,13 @@ public interface AdminRepository extends JpaRepository<User, Integer> {
     @Query(value = "UPDATE user_role r SET r.role_id = :roleId WHERE r.user_id= :id", nativeQuery = true)
     void updateRoleUser(@Param("roleId") int nrRoli, @Param("id") int id);
 
+    @Modifying
+    @Query(value = "DELETE FROM user_role WHERE user_id = :id", nativeQuery = true)
+    void deleteUserFromUserRole(@Param("id") int id);
+
+    @Modifying
+    @Query(value = "DELETE FROM user WHERE user_id = :id", nativeQuery = true)
+    void deleteUserFromUser(@Param("id") int id);
+
+
 }

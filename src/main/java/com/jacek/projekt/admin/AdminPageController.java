@@ -53,7 +53,7 @@ public class AdminPageController {
     @GetMapping("/admin/users/{page}")
     @Secured(value = {"ROLE_ADMIN"})
     public String openAdminAllUsersPage(@PathVariable("page") int page, Model model) {
-        Page<User> pages = getAllUsersPageable(page - 1);
+        Page<User> pages = getAllUsersPageable(page - 1, false, null);
         int totalPages = pages.getTotalPages();
         int currentPage = pages.getNumber();
         List<User> userList = pages.getContent();
@@ -61,7 +61,6 @@ public class AdminPageController {
         model.addAttribute("currentPage", currentPage + 1);
         model.addAttribute("userList", userList);
         model.addAttribute("recordStartCounter", currentPage * ELEMENTS);
-
         return "admin/users";
     }
 
@@ -104,9 +103,31 @@ public class AdminPageController {
         return "redirect:/admin/users/1";
     }
 
+    @GetMapping("/admin/users/search/{searchWord}/{page}")
+    @Secured(value = "ROLE_ADMIN")
+    public String openSearchUsersPage(@PathVariable("searchWord") String searchWord,
+                                      @PathVariable("page") int page, Model model) {
+        Page<User> pages = getAllUsersPageable(page - 1, true, searchWord);
+        int totalPages = pages.getTotalPages();
+        int currentPage = pages.getNumber();
+        List<User> userList = pages.getContent();
+        model.addAttribute("totalPages", totalPages);
+        model.addAttribute("currentPage", currentPage + 1);
+        model.addAttribute("userList", userList);
+        model.addAttribute("recordStartCounter", currentPage * ELEMENTS);
+        model.addAttribute("searchWord", searchWord);
+        model.addAttribute("userList", userList);
+        return "admin/usersearch";
+    }
+
     //Pobranie listy użytkowników
-    private Page<User> getAllUsersPageable(int page) {
-        Page<User> pages = adminService.findAll(PageRequest.of(page, ELEMENTS));
+    private Page<User> getAllUsersPageable(int page, boolean search, String param) {
+        Page<User> pages;
+        if (!search) {
+            pages = adminService.findAll(PageRequest.of(page, ELEMENTS));
+        } else {
+            pages = adminService.findAllSearch(param, PageRequest.of(page, ELEMENTS));
+        }
         for (User users : pages) {
             int numerRoli = users.getRoles().iterator().next().getId();
             users.setNrRoli(numerRoli);

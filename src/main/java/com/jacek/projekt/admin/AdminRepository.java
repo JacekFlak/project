@@ -1,6 +1,8 @@
 package com.jacek.projekt.admin;
 
 import com.jacek.projekt.user.User;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -28,5 +30,7 @@ public interface AdminRepository extends JpaRepository<User, Integer> {
     @Query(value = "DELETE FROM user WHERE user_id = :id", nativeQuery = true)
     void deleteUserFromUser(@Param("id") int id);
 
+    @Query(value = "SELECT * FROM User u WHERE u.name LIKE %:param% OR u.last_name LIKE %:param% OR email LIKE %:param%", nativeQuery = true)
+    Page<User> findAllSearch(@Param("param") String param, Pageable pageable);
 
 }

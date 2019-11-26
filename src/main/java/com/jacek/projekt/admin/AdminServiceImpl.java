@@ -64,4 +64,10 @@ public class AdminServiceImpl implements AdminService {
         LOG.debug(" >>>>>>>>>>>>>>>> AdminRepository.deleteUserFromUser -> " + id);
         adminRepository.deleteUserFromUser(id);
     }
+
+    @Override
+    public Page<User> findAllSearch(String param, Pageable pageable) {
+        Page<User> userList = adminRepository.findAllSearch(param, pageable);
+        return userList;
+    }
 }

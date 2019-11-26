@@ -17,4 +17,6 @@ public interface AdminService {
     void saveAll(List<User> userList);
 
     void deleteUserById(int id);
+
+    Page<User> findAllSearch(String param, Pageable pageable);
 }

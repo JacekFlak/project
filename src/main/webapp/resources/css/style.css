@@ -116,11 +116,11 @@ a:hover {
 }
 
 .btn-two.red {
-    background-color: #fa5a5a;
+    background-color: #f94149;
 }
 
 .btn-two.red:hover {
-    background-color: #f94149;
+    background-color: lightcoral;
 }
 
 .btn-two.green {
@@ -128,13 +128,13 @@ a:hover {
 }
 
 .btn-two.green:hover {
-    background-color: limegreen;
+    background-color: lightgreen;
 }
 
 .btn-two.blue {
-    background-color: dodgerblue;
+    background-color: #1c86ee;
 }
 
 .btn-two.blue:hover {
-    background-color: #1c86ee;
+    background-color: #66b3ff;
 }

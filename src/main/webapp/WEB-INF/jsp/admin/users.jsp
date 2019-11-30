@@ -50,10 +50,10 @@
     <div align="right" style="width: 1000px; padding: 2px;">
         <input type="hidden" name="cp" id="cp" value="${currentPage}"/>&nbsp;&nbsp;
         <input type="text" id="searchString"/>&nbsp;&nbsp;
-        <input type="button" value="<s:message code="button.search"/>" onclick="startSearch(0);"/><br/>
+        <input type="button" value="<s:message code="button.search"/>"  onclick="startSearch(0);"/><br/>
         <span id="errorSearch" style="color: red;"></span>
     </div>
-    <table width="1000" border="0" cellpadding="6" cellspacing="2">
+    <table width="1000" border="0" cellpadding="6" cellspacing="2" bgcolor="white">
         <tr bgcolor="#70a5ff">
             <td width="40" align="center"></td>
             <td width="40" align="center"><b><s:message code="admin.user.id"/></b></td>
@@ -127,7 +127,7 @@
             </tr>
         </c:forEach>
     </table>
-    <table width="1000" border="0" cellpadding="6" cellspacing="0" bgcolor="#70a5ff">
+    <table width="1000" border="0" cellpadding="6" cellspacing="2" bgcolor="#70a5ff">
         <tr>
             <td width="300" align="left">
                 <s:message code="info.page"/> ${currentPage} <s:message code="info.from"/> ${totalPages}

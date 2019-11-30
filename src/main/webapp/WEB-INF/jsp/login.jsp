@@ -23,9 +23,7 @@
            align="center">
         <tr>
             <td colspan="2" align="center">
-                <c:if test="${not empty param.error}">
-                    <span style="color: red; "><s:message code="error.login"/></span>
-                </c:if>
+
             </td>
         </tr>
         <tr>
@@ -45,19 +43,19 @@
                 <input type="password" name="password" id="password" size="30"/>
             </td>
         </tr>
-
-        <tr>
-            <td colspan="2" align="center" bgcolor="#ffffff">
-                <input type="submit" value="<s:message code="button.login"/>" class="formbutton"/></td>
-        </tr>
+        <div align="center">
+            <c:if test="${not empty param.error}"><br>
+            <span style="color: maroon; "><strong><s:message code="error.login"/></strong></span>
+            </c:if>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit" value="<s:message code="button.login"/>" class="btn-two green rounded"/></td>
+            </tr>
     </table>
-
 </form>
-
 <div id="copyright">
     <a><s:message code="info.title"/></a><br>
     <s:message code="info.author"/>
 </div>
-
 </body>
 </html>

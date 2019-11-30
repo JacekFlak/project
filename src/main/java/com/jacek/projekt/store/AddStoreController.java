@@ -31,14 +31,13 @@ public class AddStoreController {
 
     @PostMapping("/addstore")
     public String newStoreAction(Store store, BindingResult result, Model model, Locale locale) {
-        String returnPage = "newstore";
         new NewStoreValidator().validate(store, result);
         if (!result.hasErrors()) {
             storeService.saveStore(store);
             model.addAttribute("message", messageSource.getMessage("store.added.success", null, locale));
             model.addAttribute("store", new Store());
         }
-        return returnPage;
+        return "newstore";
     }
 
 }

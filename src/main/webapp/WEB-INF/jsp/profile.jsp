@@ -2,6 +2,7 @@
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -17,6 +18,8 @@
 <div allign="center">
     <h2><s:message code="profile.userData"/></h2>
 </div>
+
+<sf:form>
 
 <table width="500" border="0" cellpadding="4" cellspacing="1" align="center">
 
@@ -69,13 +72,23 @@
         </td>
         <td width="270" align="left">
             <c:choose>
-                <c:when test="${user.nrRoli == 1 }">
-                    <s:message code="word.admin"/>
-                </c:when>
-                <c:otherwise>
-                    <s:message code="word.user"/>
-                </c:otherwise>
-            </c:choose>
+
+            <c:when test="${u.nrRoli == 1 }">
+                <span style="color: blue; "><s:message code="word.admin"/></span>
+            </c:when>
+
+            <c:when test="${u.nrRoli == 2 }">
+                <span style="color: black; "><s:message code="word.user"/></span>
+            </c:when>
+
+            <c:when test="${u.nrRoli == 3 }">
+                <span style="color: black; "><s:message code="word.pricing"/></span>
+            </c:when>
+
+            <c:otherwise>
+            <span style="color: black; "><s:message code="word.trader"/>
+                        </c:otherwise>
+                </c:choose>
         </td>
     </tr>
 
@@ -86,14 +99,16 @@
     <tr>
         <td align="center">
             <input type="button" value="<s:message code="button.editProfile"/>"
-                   onclick="window.location.href='${pageContext.request.contextPath}/editprofile'" class="formbutton"/>
+                   onclick="window.location.href='${pageContext.request.contextPath}/editprofile'"
+                   class="btn-two blue rounded"/>
         </td>
         <td align="center">
             <input type="button" value="<s:message code="button.changePassword"/>"
-                   onclick="window.location.href='${pageContext.request.contextPath}/editpassword'" class="formbutton"/>
+                   onclick="window.location.href='${pageContext.request.contextPath}/editpassword'"
+                   class="btn-two blue rounded"/>
         </td>
     </tr>
 </table>
-
+</sf:form>
 </body>
 </html>

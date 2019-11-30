@@ -35,14 +35,14 @@
     <div align="right" style="width: 1000px; padding: 2px;">
         <input type="hidden" name="cp" id="cp" value="${currentPage}"/>
     </div>
-    <table width="1000" border="0" cellpadding="6" cellspacing="2">
+    <table width="1000" border="0" cellpadding="6" cellspacing="2" bgcolor="white">
         <tr bgcolor="#70a5ff">
-            <td width="40" align="center"></td>
+            <td width="40" align="center"><b><s:message code="product.id"/></b></td>
             <td width="190" align="center"><b><s:message code="product.name"/></b></td>
             <td width="190" align="center"><b><s:message code="product.price_per_pack"/></b></td>
             <td width="200" align="center"><b><s:message code="product.quantity_per_pack"/></b></td>
             <td width="100" align="center"><b><s:message code="product.description"/></b></td>
-            <td width="50"></td>
+            <td width="50" align="center"><b><s:message code="product.remove"/></b></td>
         </tr>
         <c:forEach var="p" items="${productList }">
             <c:set var="count" value="${count+1}"/>
@@ -52,6 +52,10 @@
                 <td align="center"><c:out value="${p.price_per_pack }"/></td>
                 <td align="center"><c:out value="${p.quantity_per_pack }"/></td>
                 <td align="center"><c:out value="${p.description }"/></td>
+                <td align="center">
+                    <img src="/resources/images/delicon.png" width="16" height="16"
+                         title="<s:message code="product.remove"/>"/>
+                </td>
             </tr>
         </c:forEach>
     </table>

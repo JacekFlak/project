@@ -14,15 +14,14 @@
 <body>
 <%@include file="/WEB-INF/incl/menu.app" %>
 
-<h2 align="center"><s:message code="profileEdit.pageName"/></h2>
+<h2 align="left"><s:message code="profileEdit.pageName"/></h2>
 
 <sf:form id="usersForm" action="updateprofile" modelAttribute="user"
          enctype="multipart/form-data" method="POST">
 
     <sf:hidden path="id"/>
 
-    <table width="500" border="0" cellpadding="4" cellspacing="1"
-           align="center">
+    <table width="500" border="0" cellpadding="4" cellspacing="1" align="center">
 
         <tr>
             <td width="130" align="right"><s:message code="register.name"/></td>
@@ -52,10 +51,11 @@
         </tr>
 
         <tr>
-            <td colspan="2" align="center" bgcolor="#fff">
-                <input type="submit" value="<s:message code="button.save"/>" class="formbutton"/>
+            <td colspan="2" align="center">
+                <input type="submit" value="<s:message code="button.save"/>" class="btn-two green rounded"/>
                 <input type="button" value="<s:message code="button.cancel"/>"
-                       onclick="window.location.href='${pageContext.request.contextPath}/profile'" class="formbutton"/>
+                       onclick="window.location.href='${pageContext.request.contextPath}/profile'"
+                       class="btn-two red rounded"/>
             </td>
         </tr>
 

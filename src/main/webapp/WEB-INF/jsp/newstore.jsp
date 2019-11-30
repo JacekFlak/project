@@ -92,9 +92,9 @@
         </tr>
 
         <tr>
-            <td colspan="2" align="center" bgcolor="#fff">
-                <input type="submit" value="<s:message code="button.add.store"/>" class="formbutton"/>
-                <input type="button" value="<s:message code="button.cancel"/>" class="formbutton"
+            <td colspan="2" align="center">
+                <input type="submit" value="<s:message code="button.add.store"/>" class="btn-two green rounded"/>
+                <input type="button" value="<s:message code="button.cancel"/>" class="btn-two red rounded"
                        onclick="window.location.href='${pageContext.request.contextPath}/'"/>
             </td>
         </tr>

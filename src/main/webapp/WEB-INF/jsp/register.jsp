@@ -33,7 +33,7 @@
                                                    size="28" id="name"/></td>
         </tr>
         <tr>
-            <td colspan="2" align="center"><font color="red"><sf:errors path="name"/></font></td>
+            <td colspan="2" align="center"><span style="color: maroon; "><strong><sf:errors path="name"/></strong></span></td>
         </tr>
 
         <tr>
@@ -43,7 +43,7 @@
         </tr>
 
         <tr>
-            <td colspan="2" align="center"><font color="red"><sf:errors path="lastName"/></font></td>
+            <td colspan="2" align="center"><span style="color: maroon; "><strong><sf:errors path="lastName"/></strong></span></td>
         </tr>
 
         <tr>
@@ -51,7 +51,7 @@
             <td width="270" align="left"><sf:input path="email" size="28"/></td>
         </tr>
         <tr>
-            <td colspan="2" align="center"><font color="red"><sf:errors path="email"/></font></td>
+            <td colspan="2" align="center"><span style="color: maroon; "><strong><sf:errors path="email"/></strong></span></td>
         </tr>
 
         <tr>
@@ -59,13 +59,13 @@
             <td width="270" align="left"><sf:password path="password" size="28"/></td>
         </tr>
         <tr>
-            <td colspan="2" align="center"><font color="red"><sf:errors path="password"/></font></td>
+            <td colspan="2" align="center"><span style="color: maroon; "><strong><sf:errors path="password"/></strong></span></td>
         </tr>
 
         <tr>
-            <td colspan="2" align="center" bgcolor="#fff">
-                <input type="submit" value="<s:message code="button.register"/>" class="formbutton"/>
-                <input type="button" value="<s:message code="button.cancel"/>" class="formbutton"
+            <td colspan="2" align="center">
+                <input type="submit" value="<s:message code="button.register"/>" class="btn-two green rounded"/>
+                <input type="button" value="<s:message code="button.cancel"/>" class="btn-two red rounded"
                        onclick="window.location.href='${pageContext.request.contextPath}/'"/>
             </td>
         </tr>

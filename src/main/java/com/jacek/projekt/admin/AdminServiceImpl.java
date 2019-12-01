@@ -24,9 +24,7 @@ public class AdminServiceImpl implements AdminService {
     private static final Logger LOG = LoggerFactory.getLogger(AdminServiceImpl.class);
 
     private final AdminRepository adminRepository;
-
     private final RoleRepository roleRepository;
-
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Override

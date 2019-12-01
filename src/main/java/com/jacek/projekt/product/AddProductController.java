@@ -17,8 +17,13 @@ import java.util.Locale;
 @RequiredArgsConstructor
 public class AddProductController {
 
-    private final ProductService productService;
-    private final MessageSource messageSource;
+    private ProductService productService;
+    private MessageSource messageSource;
+
+    public AddProductController(ProductService productService, MessageSource messageSource) {
+        this.productService = productService;
+        this.messageSource = messageSource;
+    }
 
     private static final Logger LOG = LoggerFactory.getLogger(AddProductController.class);
 

@@ -28,7 +28,7 @@ public class User {
     @NotNull
     private String name;
 
-    @Column(name = "lastName")
+    @Column(name = "last_name")
     @NotNull
     private String lastName;
 

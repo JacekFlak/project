@@ -21,7 +21,7 @@
 
 <sf:form>
 
-<table width="500" border="0" cellpadding="4" cellspacing="1" align="center">
+<table width="300" border="0" cellpadding="4" cellspacing="1" align="center" class="userdata">
 
     <tr>
         <td width="130" align="right">

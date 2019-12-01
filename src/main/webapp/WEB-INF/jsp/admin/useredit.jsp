@@ -63,10 +63,11 @@
         </tr>
 
         <tr>
-            <td colspan="2" align="center" bgcolor="#fff">
-                <input type="submit" value="<s:message code="button.save"/>"/>
+            <td colspan="2" align="center">
+                <input type="submit" value="<s:message code="button.save"/>" class="btn-two green rounded"/>
                 <input type="button" value="<s:message code="button.cancel"/>"
-                       onclick="window.location.href='${pageContext.request.contextPath}/admin/users/1'"/>
+                       onclick="window.location.href='${pageContext.request.contextPath}/admin/users/1'"
+                       class="btn-two red rounded"/>
             </td>
         </tr>
 

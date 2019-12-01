@@ -24,7 +24,6 @@ public class ProductsPageController {
     private static int ELEMENTS = 10;
 
     private final ProductService productService;
-
     private final UserService userService;
 
     private static final Logger LOG = LoggerFactory.getLogger(MainPageController.class);

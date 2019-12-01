@@ -15,7 +15,7 @@ public class RequestsController {
 
     private static final Logger LOG = LoggerFactory.getLogger(MainPageController.class);
 
-    private final UserService userService;
+    private UserService userService;
 
     public RequestsController(UserService userService) {
         this.userService = userService;

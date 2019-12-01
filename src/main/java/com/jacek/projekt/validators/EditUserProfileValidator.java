@@ -25,7 +25,7 @@ public class EditUserProfileValidator implements Validator {
 
         if (!u.getEmail().equals(null)) {
             boolean isMatch = AppDemoUtils.checkEmailOrPassword(AppDemoConstants.EMAIL_PATTERN, u.getEmail());
-            if(!isMatch) {
+            if (!isMatch) {
                 errors.rejectValue("email", "error.userEmailIsNotMatch");
             }
         }

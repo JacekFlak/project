@@ -19,10 +19,10 @@
 
 <a align="center">
     <a><c:out value="${message}"/></a>
-</p>
+    </p>
 
-<sf:form id="storesForm" action="addstore" modelAttribute="store"
-         enctype="multipart/form-data" method="POST">
+    <sf:form id="storesForm" action="addstore" modelAttribute="store"
+             enctype="multipart/form-data" method="POST">
 
     <table width="500" border="0" cellpadding="4" cellspacing="1"
            align="center">
@@ -33,7 +33,8 @@
         </tr>
 
         <tr>
-            <td colspan="2" align="center"><span style="color: red; "><sf:errors path="name"/></span></td>
+            <td colspan="2" align="center"><span style="color: maroon; "><strong><sf:errors
+                    path="name"/></strong></span></td>
         </tr>
 
         <tr>
@@ -43,7 +44,8 @@
         </tr>
 
         <tr>
-            <td colspan="2" align="center"><span style="color: red; "><sf:errors path="street"/></span></td>
+            <td colspan="2" align="center"><span style="color: maroon; "><strong><sf:errors
+                    path="street"/></strong></span></td>
         </tr>
 
         <tr>
@@ -52,7 +54,8 @@
         </tr>
 
         <tr>
-            <td colspan="2" align="center"><span style="color: red; "><sf:errors path="number"/></span></td>
+            <td colspan="2" align="center"><span style="color: maroon; "><strong><sf:errors
+                    path="number"/></strong></span></td>
         </tr>
 
         <tr>
@@ -61,7 +64,8 @@
         </tr>
 
         <tr>
-            <td colspan="2" align="center"><span style="color: red; "><sf:errors path="city"/></span></td>
+            <td colspan="2" align="center"><span style="color: maroon; "><strong><sf:errors
+                    path="city"/></strong></span></td>
         </tr>
 
         <tr>
@@ -70,7 +74,8 @@
         </tr>
 
         <tr>
-            <td colspan="2" align="center"><span style="color: red; "><sf:errors path="country"/></span></td>
+            <td colspan="2" align="center"><span style="color: maroon; "><strong><sf:errors
+                    path="country"/></strong></span></td>
         </tr>
 
         <tr>
@@ -79,7 +84,8 @@
         </tr>
 
         <tr>
-            <td colspan="2" align="center"><span style="color: red; "><sf:errors path="email"/></span></td>
+            <td colspan="2" align="center"><span style="color: maroon; "><strong><sf:errors
+                    path="email"/></strong></span></td>
         </tr>
 
         <tr>
@@ -88,7 +94,8 @@
         </tr>
 
         <tr>
-            <td colspan="2" align="center"><span style="color: red; "><sf:errors path="phone"/></span></td>
+            <td colspan="2" align="center"><span style="color: maroon; "><strong><sf:errors
+                    path="phone"/></strong></span></td>
         </tr>
 
         <tr>
@@ -101,7 +108,7 @@
 
     </table>
 
-</sf:form>
+    </sf:form>
 
 </body>
 </html>

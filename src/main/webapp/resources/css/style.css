@@ -32,6 +32,11 @@ form { /*kolor tla w formularzu*/
     border-radius: 8px;
 }
 
+.userdata {
+    background: #8fd5f9;
+    border-radius: 8px;
+}
+
 h2 { /*kolor tych napisow o stronie*/
     color: #008080;
     font-weight: bold;

@@ -18,7 +18,7 @@
 <h2><s:message code="menu.newProduct"/></h2>
 
 <p align="center">
-  <a> <c:out value="${message}"/> </a>
+    <a> <c:out value="${message}"/> </a>
 </p>
 
 <sf:form id="productsForm" action="addproduct" modelAttribute="product"
@@ -33,7 +33,8 @@
         </tr>
 
         <tr>
-            <td colspan="2" align="center"><span style="color: red; "><sf:errors path="name"/></span></td>
+            <td colspan="2" align="center"><span style="color: maroon; "><strong><sf:errors
+                    path="name"/></strong></span></td>
         </tr>
 
         <tr>
@@ -43,7 +44,8 @@
         </tr>
 
         <tr>
-            <td colspan="2" align="center"><span style="color: red; "><sf:errors path="quantity_per_pack"/></span></td>
+            <td colspan="2" align="center"><span style="color: maroon; "><strong><sf:errors
+                    path="quantity_per_pack"/></strong></span></td>
         </tr>
 
         <tr>
@@ -52,7 +54,8 @@
         </tr>
 
         <tr>
-            <td colspan="2" align="center"><span style="color: red; "><sf:errors path="price_per_pack"/></span></td>
+            <td colspan="2" align="center"><span style="color: maroon; "><strong><sf:errors
+                    path="price_per_pack"/></strong></span></td>
         </tr>
 
         <tr>
@@ -61,7 +64,8 @@
         </tr>
 
         <tr>
-            <td colspan="2" align="center"><span style="color: red; "><sf:errors path="description"/></span></td>
+            <td colspan="2" align="center"><span style="color: maroon; "><strong><sf:errors
+                    path="description"/></strong></span></td>
         </tr>
 
         <tr>

@@ -35,7 +35,7 @@
     <div align="right" style="width: 1000px; padding: 2px;">
         <input type="hidden" name="cp" id="cp" value="${currentPage}"/>
         <input type="text" id="searchString"/>&nbsp;&nbsp;
-        <input type="button" value="<s:message code="button.search"/>"  onclick="startSearch(0);"/><br/>
+        <input type="button" value="<s:message code="button.search"/>" onclick="startSearch(0);"/><br/>
     </div>
     <table width="1000" border="0" cellpadding="6" cellspacing="2" bgcolor="white">
         <tr bgcolor="#70a5ff">

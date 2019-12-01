@@ -33,7 +33,8 @@
                                                    size="28" id="name"/></td>
         </tr>
         <tr>
-            <td colspan="2" align="center"><span style="color: maroon; "><strong><sf:errors path="name"/></strong></span></td>
+            <td colspan="2" align="center"><span style="color: maroon; "><strong><sf:errors
+                    path="name"/></strong></span></td>
         </tr>
 
         <tr>
@@ -43,7 +44,8 @@
         </tr>
 
         <tr>
-            <td colspan="2" align="center"><span style="color: maroon; "><strong><sf:errors path="lastName"/></strong></span></td>
+            <td colspan="2" align="center"><span style="color: maroon; "><strong><sf:errors
+                    path="lastName"/></strong></span></td>
         </tr>
 
         <tr>
@@ -51,7 +53,8 @@
             <td width="270" align="left"><sf:input path="email" size="28"/></td>
         </tr>
         <tr>
-            <td colspan="2" align="center"><span style="color: maroon; "><strong><sf:errors path="email"/></strong></span></td>
+            <td colspan="2" align="center"><span style="color: maroon; "><strong><sf:errors
+                    path="email"/></strong></span></td>
         </tr>
 
         <tr>
@@ -59,7 +62,8 @@
             <td width="270" align="left"><sf:password path="password" size="28"/></td>
         </tr>
         <tr>
-            <td colspan="2" align="center"><span style="color: maroon; "><strong><sf:errors path="password"/></strong></span></td>
+            <td colspan="2" align="center"><span style="color: maroon; "><strong><sf:errors
+                    path="password"/></strong></span></td>
         </tr>
 
         <tr>

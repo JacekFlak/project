@@ -31,7 +31,7 @@
                 <s:message code="register.email"/>
             </td>
             <td align="left">
-                <input type="text" name="email" id="email"
+                <input type="text" name="email" id="email" class="input"
                        size="30"/>
             </td>
         </tr>

@@ -30,7 +30,7 @@
         <tr>
             <td width="130" align="right"><s:message code="request.store"/></td>
 
-            <td width="270" align="left"><select name="store">
+            <td width="270" align="left"><select name="store" onchange="getSelectedLabel(this);">
                 <c:forEach var="s" items="${storeList }">
                     <option value="${s.id}">${s.name}</option>
                 </c:forEach>
@@ -51,22 +51,39 @@
 
         <tr>
             <td width="130" align="right"><s:message code="request.quantity"/></td>
-            <td width="270" align="left"><sf:input path="quantity" size="10" id="name"/></td>
+            <td width="270" align="left"><sf:input path="quantity" size="10"/></td>
+        </tr>
+
+        <tr>
+            <td colspan="2" align="center"><span style="color: maroon; "><strong><sf:errors
+                    path="quantity"/></strong></span></td>
         </tr>
 
         <tr>
             <td width="130" align="right"><s:message code="request.description"/></td>
-            <td width="270" align="left"><sf:input path="description" size="50" id="name"/></td>
+            <td width="270" align="left"><sf:input path="description" size="50"/></td>
+        </tr>
+
+        <tr>
+            <td colspan="2" align="center"><span style="color: maroon; "><strong><sf:errors
+                    path="description"/></strong></span></td>
         </tr>
 
         <tr>
             <td colspan="2" align="center">
                 <input type="submit" value="<s:message code="button.create.request"/>" class="btn-two green rounded"/>
-                <input type="button" value="<s:message code="button.cancel"/>" class="btn-two red rounded"/>
+                <input type="button" value="<s:message code="button.cancel"/>" class="btn-two red rounded"
+                       onclick="window.location.href='${pageContext.request.contextPath}/'"/>
             </td>
         </tr>
 
     </table>
 </sf:form>
+
+<%
+    String storeName = request.getParameter("store");
+    String productName = request.getParameter("product");
+%>
+
 </body>
 </html>

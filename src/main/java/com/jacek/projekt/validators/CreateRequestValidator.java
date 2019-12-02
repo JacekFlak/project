@@ -2,6 +2,7 @@ package com.jacek.projekt.validators;
 
 import com.jacek.projekt.request.Request;
 import org.springframework.validation.Errors;
+import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
 
 public class CreateRequestValidator implements Validator {
@@ -15,10 +16,8 @@ public class CreateRequestValidator implements Validator {
     public void validate(Object obj, Errors errors) {
         Request r = (Request) obj;
 
-        /*ValidationUtils.rejectIfEmpty(errors, "name", "error.productName.empty");
-        ValidationUtils.rejectIfEmpty(errors, "price_per_pack", "error.pricePerPack.empty");
-        ValidationUtils.rejectIfEmpty(errors, "quantity_per_pack", "error.quantityPerPack.empty");
-        ValidationUtils.rejectIfEmpty(errors, "description", "error.description.empty");*/
+        ValidationUtils.rejectIfEmpty(errors, "quantity", "error.quantityPerPack.empty");
+        ValidationUtils.rejectIfEmpty(errors, "description", "error.description.empty");
     }
 }
 

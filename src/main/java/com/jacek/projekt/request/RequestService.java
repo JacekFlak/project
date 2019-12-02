@@ -1,4 +1,9 @@
 package com.jacek.projekt.request;
 
-public class RequestService {
+import com.jacek.projekt.product.Product;
+import com.jacek.projekt.store.Store;
+
+public interface RequestService {
+
+    void saveRequest(Request request, Store storeName, Product productName);
 }

@@ -16,7 +16,7 @@
 <body>
 <%@include file="/WEB-INF/incl/menu.app" %>
 
-<h2 align="center"><s:message code="button.changePassword"/></h2>
+<h2 align="left"><s:message code="button.changePassword"/></h2>
 
 <p align="right">
     <c:out value="${message }"/>

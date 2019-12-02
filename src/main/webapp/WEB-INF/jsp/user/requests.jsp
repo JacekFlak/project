@@ -45,15 +45,19 @@
             <td width="10" align="center"></td>
             <td width="30" align="center"><b><s:message code="request.id"/></b></td>
             <td width="50" align="center"><b><s:message code="request.quantity"/></b></td>
+            <td width="80" align="center"><b><s:message code="store.name"/></b></td>
+            <td width="50" align="center"><b><s:message code="product.name"/></b></td>
             <td width="450" align="center"><b><s:message code="request.description"/></b></td>
+
         </tr>
-        <c:forEach var="r" items="${requestList }">
+        <c:forEach var="r" items="${requestList }" varStatus="status">
             <c:set var="count" value="${count+1}"/>
             <tr onmouseover="changeTrBg(this)" onmouseout="defaultTrBg(this)">
-
                 <td align="center"><c:out value="${count }"/></td>
                 <td align="center"><c:out value="${r.id }"/></td>
                 <td align="center"><c:out value="${r.quantity }"/></td>
+                <td align="center"><c:out value="${storeList[status.index].name}"/></td>
+                <td align="center"><c:out value="${productList[status.index].name}"/></td>
                 <td align="left"><c:out value="${r.description }"/></td>
             </tr>
         </c:forEach>

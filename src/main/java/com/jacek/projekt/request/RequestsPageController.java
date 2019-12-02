@@ -1,7 +1,9 @@
 package com.jacek.projekt.request;
 
 import com.jacek.projekt.controllers.MainPageController;
+import com.jacek.projekt.product.Product;
 import com.jacek.projekt.product.ProductService;
+import com.jacek.projekt.store.Store;
 import com.jacek.projekt.store.StoreService;
 import com.jacek.projekt.user.User;
 import com.jacek.projekt.user.UserService;
@@ -23,12 +25,12 @@ import java.util.List;
 @RequiredArgsConstructor
 public class RequestsPageController {
 
-    private static int ELEMENTS = 10;
+    private static int ELEMENTS = 5;
 
-    private final ProductService productService;
-    private final UserService userService;
     private final RequestService requestService;
     private final StoreService storeService;
+    private final ProductService productService;
+    private final UserService userService;
 
     private static final Logger LOG = LoggerFactory.getLogger(MainPageController.class);
 
@@ -51,9 +53,19 @@ public class RequestsPageController {
         int totalPages = pages.getTotalPages();
         int currentPage = pages.getNumber();
         List<Request> requestList = pages.getContent();
+        /*List<Store> storeList = storeService.findAll();
+        List<Product> productList = productService.findAll();*/
+
+        requestList.stream()
+                .map(Request::getStores)
+
+        List<Product> productList = productService.findAll();
+
         model.addAttribute("totalPages", totalPages);
         model.addAttribute("currentPage", currentPage + 1);
         model.addAttribute("requestList", requestList);
+        model.addAttribute("storeList", storeList);
+        model.addAttribute("productList", productList);
         model.addAttribute("recordStartCounter", currentPage * ELEMENTS);
 
         return "user/requests";
@@ -67,5 +79,3 @@ public class RequestsPageController {
     }
 
 }
-
-

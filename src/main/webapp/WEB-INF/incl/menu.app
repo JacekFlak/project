@@ -4,7 +4,6 @@
 			<a href="/"><s:message code="menu.mainPage"/></a>&nbsp;&nbsp;
 
 			 <sec:authorize access="hasRole('ROLE_USER')">
-                    <a href="/requests"><s:message code="menu.requests"/></a>&nbsp;&nbsp;
                     <a href="/newrequest"><s:message code="menu.newRequest"/></a>&nbsp;&nbsp;
              </sec:authorize>
 
@@ -23,6 +22,10 @@
         <sec:authorize access="hasRole('ROLE_TRADER')">
                     <a href="/trader"><s:message code="menu.trader"/></a>&nbsp;&nbsp;
         </sec:authorize>
+
+        <sec:authorize access="hasRole('ROLE_USER')">
+                    <a href="/user"><s:message code="menu.user"/></a>&nbsp;&nbsp;
+                </sec:authorize>
 
 		<sec:authorize access="hasRole('ANONYMOUS')">
 			<a href="/login"><s:message code="menu.login"/></a>&nbsp;&nbsp;

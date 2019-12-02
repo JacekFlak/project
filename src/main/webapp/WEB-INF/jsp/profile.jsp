@@ -21,7 +21,7 @@
 
 <sf:form>
 
-<table width="300" border="0" cellpadding="4" cellspacing="1" align="center" class="userdata">
+<table width="300" border="1" cellpadding="4" cellspacing="1" align="center" class="userdata">
 
     <tr>
         <td width="130" align="right">
@@ -73,15 +73,15 @@
         <td width="270" align="left">
             <c:choose>
 
-            <c:when test="${u.nrRoli == 1 }">
+            <c:when test="${user.nrRoli == 1 }">
                 <span style="color: blue; "><s:message code="word.admin"/></span>
             </c:when>
 
-            <c:when test="${u.nrRoli == 2 }">
+            <c:when test="${user.nrRoli == 2 }">
                 <span style="color: black; "><s:message code="word.user"/></span>
             </c:when>
 
-            <c:when test="${u.nrRoli == 3 }">
+            <c:when test="${user.nrRoli == 3 }">
                 <span style="color: black; "><s:message code="word.pricing"/></span>
             </c:when>
 

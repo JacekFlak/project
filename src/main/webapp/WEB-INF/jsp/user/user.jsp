@@ -3,7 +3,6 @@
 <%@ taglib prefix="s" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="sf" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,12 +10,13 @@
     <style type="text/css">
         <%@include file="/resources/css/style.css" %>
     </style>
-    <title><s:message code="menu.requests"/></title>
+    <title><s:message code="menu.user"/></title>
 </head>
 <body>
 <%@include file="/WEB-INF/incl/menu.app" %>
 
-<p align="center"><s:message code="request.AllRequests"/></p>
+<h2><s:message code="menu.user"/></h2>
+<%@include file="/WEB-INF/incl/usermenu.app" %>
 
 </body>
 </html>

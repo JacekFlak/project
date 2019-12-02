@@ -30,6 +30,6 @@ public class RequestsController {
         User user = userService.findUserByEmail(username);
         model.addAttribute("user", user);
 
-        return "requests";
+        return "user/requests";
     }
 }

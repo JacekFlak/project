@@ -52,15 +52,15 @@ public class CreateRequestController {
     }
 
     @PostMapping("/addrequest")
-    public String CreateNewRequestAction(Request request, BindingResult result, Model model, Locale locale, Store storeName, Product productName) {
+    public String CreateNewRequestAction(Request request, BindingResult result, Model model, Locale locale, Store storeId, Product productId) {
         String returnPage = "newrequest";
 
         new CreateRequestValidator().validate(request, result);
 
         if (!result.hasErrors()) {
-            model.addAttribute("storeName", storeName);
-            model.addAttribute("productName", productName);
-            requestService.saveRequest(request, storeName, productName);
+            model.addAttribute("storeName", storeId);
+            model.addAttribute("productName", productId);
+            requestService.saveRequest(request, storeId, productId);
             model.addAttribute("message", messageSource.getMessage("request.creation.success", null, locale));
             model.addAttribute("request", new Request());
 

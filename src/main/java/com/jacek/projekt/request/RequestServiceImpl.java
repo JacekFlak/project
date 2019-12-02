@@ -24,16 +24,15 @@ public class RequestServiceImpl implements RequestService {
     private final ProductRepository productRepository;
 
     @Override
-    public void saveRequest(Request request, Store storeName, Product productName) {
+    public void saveRequest(Request request, Store storeId, Product productId) {
 
-        String storeName2 = storeName.toString();
+        int store2 = storeId.getId();
+        int product2 = productId.getId();
 
-        String productName2 = productName.toString();
-
-        Store store = storeRepository.findStoreByName(storeName2);
+        Store store = storeRepository.findStoreById(store2);
         request.setStores(new HashSet<Store>(Arrays.asList(store)));
 
-        Product product = productRepository.findProductByName(productName2);
+        Product product = productRepository.findProductById(product2);
         request.setProducts(new HashSet<Product>(Arrays.asList(product)));
 
         requestRepository.save(request);

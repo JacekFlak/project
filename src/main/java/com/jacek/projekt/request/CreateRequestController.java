@@ -68,4 +68,4 @@ public class CreateRequestController {
         return returnPage;
     }
 
-}
+}//zrobic tak zeby z formularza pobierac id wybranych opcji , w saverequest wysylac te id , pamietac ze to sa int,

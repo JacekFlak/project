@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface RequestService {
 
-    void saveRequest(Request request, Store storeName, Product productName);
+    void saveRequest(Request request, Store store, Product product);
 
     List<Request> findAll();
 

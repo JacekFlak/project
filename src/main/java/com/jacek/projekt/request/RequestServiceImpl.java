@@ -10,8 +10,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
 
 @Service("requestService")
@@ -24,17 +22,9 @@ public class RequestServiceImpl implements RequestService {
     private final ProductRepository productRepository;
 
     @Override
-    public void saveRequest(Request request, Store storeId, Product productId) {
-
-        int store2 = storeId.getId();
-        int product2 = productId.getId();
-
-        Store store = storeRepository.findStoreById(store2);
-        request.setStores(new HashSet<Store>(Arrays.asList(store)));
-
-        Product product = productRepository.findProductById(product2);
-        request.setProducts(new HashSet<Product>(Arrays.asList(product)));
-
+    public void saveRequest(Request request, Store store, Product product) {
+        request.setStore(store);
+        request.setProduct(product);
         requestRepository.save(request);
     }
 

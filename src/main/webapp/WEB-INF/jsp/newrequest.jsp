@@ -81,8 +81,8 @@
 </sf:form>
 
 <%
-String storeId = request.getParameter("store");
-String productId = request.getParameter("product");
+    String storeId = request.getParameter("store");
+    String productId = request.getParameter("product");
 %>
 
 </body>

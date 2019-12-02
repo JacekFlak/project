@@ -2,12 +2,10 @@ package com.jacek.projekt.request;
 
 import com.jacek.projekt.product.Product;
 import com.jacek.projekt.store.Store;
-import com.jacek.projekt.user.Role;
 import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.util.Set;
 
 @Entity
 @Table(name = "request")
@@ -30,12 +28,12 @@ public class Request {
     @Column(name = "finished")
     private int finished;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "request_store", joinColumns = @JoinColumn(name = "request_id"), inverseJoinColumns = @JoinColumn(name = "store_id"))
-    private Set<Store> stores;
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Store store;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "request_product", joinColumns = @JoinColumn(name = "request_id"), inverseJoinColumns = @JoinColumn(name = "product_id"))
-    private Set<Product> products;
+    @ManyToOne(cascade = CascadeType.ALL)
+    private Product product;
 
 }
+
+//zmienic relacje miedzy tabelami

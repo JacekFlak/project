@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 @RequiredArgsConstructor
@@ -53,13 +54,14 @@ public class RequestsPageController {
         int totalPages = pages.getTotalPages();
         int currentPage = pages.getNumber();
         List<Request> requestList = pages.getContent();
-        /*List<Store> storeList = storeService.findAll();
-        List<Product> productList = productService.findAll();*/
 
-        requestList.stream()
-                .map(Request::getStores)
+        List<Store> storeList = requestList.stream()
+                .map(Request::getStore)
+                .collect(Collectors.toList());
 
-        List<Product> productList = productService.findAll();
+        List<Product> productList = requestList.stream()
+                .map(Request::getProduct)
+                .collect(Collectors.toList());
 
         model.addAttribute("totalPages", totalPages);
         model.addAttribute("currentPage", currentPage + 1);

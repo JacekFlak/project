@@ -20,5 +20,7 @@
 
 <h3 align="center"><s:message code="info.author"/></h3>
 
+<%--<img src="/resources/images/github.jpg" onclick="github.com/JacekFlak/project"/>--%>
+
 </body>
 </html>

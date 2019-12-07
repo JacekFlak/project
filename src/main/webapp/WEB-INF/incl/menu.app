@@ -1,7 +1,7 @@
 <table width="100%" border="0" cellpadding="8" cellspacing="4" class="tableMenuBg">
 	<tr>
 		<td align="left" width="900">
-			<a href="/"><s:message code="menu.mainPage"/></a>&nbsp;&nbsp;
+			<a href="/"> <img src="/resources/images/home.png" width="19" height="19"/></a>&nbsp;&nbsp;
 
 			 <sec:authorize access="hasRole('ROLE_USER')">
                     <a href="/newrequest"><s:message code="menu.newRequest"/></a>&nbsp;&nbsp;
@@ -27,13 +27,18 @@
                     <a href="/user"><s:message code="menu.user"/></a>&nbsp;&nbsp;
                 </sec:authorize>
 
+        <sec:authorize access="hasRole('ROLE_PRICING')">
+                            <a href="/user"><s:message code="menu.user"/></a>&nbsp;&nbsp;
+                        </sec:authorize>
+
 		<sec:authorize access="hasRole('ANONYMOUS')">
 			<a href="/login"><s:message code="menu.login"/></a>&nbsp;&nbsp;
 		</sec:authorize>
 
 		<sec:authorize access="isAuthenticated()">
-			<a href="/profile"><s:message code="menu.profile"/></a>&nbsp;&nbsp;
-			<a href="/logout"><s:message code="menu.logout"/></a>&nbsp;&nbsp;
+			<a href="/profile"><img src="/resources/images/profile.jpg" width="20" height="20"  title="<s:message code="menu.profile"/>"/>&nbsp;&nbsp;
+			<a href="/contact"><img src="/resources/images/help.png" width="20" height="20"  title="<s:message code="menu.support"/>"/> &nbsp;&nbsp;
+			<a href="/logout"> <img src="/resources/images/logout.png" width="20" height="20"  title="<s:message code="menu.logout"/>"/></a>&nbsp;&nbsp;
 		</sec:authorize>
 		</td>
 	</tr>

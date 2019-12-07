@@ -25,8 +25,8 @@ public class Request {
     @NotNull
     private String description;
 
-    @Column(name = "finished")
-    private int finished;
+    @Column(name = "approved")
+    private int approved;
 
     @ManyToOne(cascade = CascadeType.ALL)
     private Store store;
@@ -35,5 +35,3 @@ public class Request {
     private Product product;
 
 }
-
-//zmienic relacje miedzy tabelami

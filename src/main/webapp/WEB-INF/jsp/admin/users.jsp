@@ -12,6 +12,7 @@
         <%@include file="/resources/css/style.css" %>
     </style>
     <title><s:message code="menu.users"/></title>
+
     <script type="text/javascript">
         function changeTrBg(row) {
             row.style.backgroundColor = "#e6e6e6";
@@ -108,11 +109,13 @@
                 <td>
                     <c:choose>
                         <c:when test="${u.active == 1 }">
-                            <img src="/resources/images/deliconinact.png" width="16" height="16"/>
+                            <img src="/resources/images/deliconinact.png" width="16" height="16"
+                                 title="<s:message code="delete.not.user"/>"/>
                         </c:when>
 
                         <c:when test="${u.nrRoli == 1 }">
-                            <img src="/resources/images/deliconinact.png" width="16" height="16"/>
+                            <img src="/resources/images/deliconinact.png" width="16" height="16"
+                                 title="<s:message code="delete.not.user"/>"/>
                         </c:when>
 
                         <c:otherwise>

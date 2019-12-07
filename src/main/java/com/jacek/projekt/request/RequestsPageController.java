@@ -14,6 +14,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.security.access.annotation.Secured;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,7 +27,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class RequestsPageController {
 
-    private static int ELEMENTS = 5;
+    private static int ELEMENTS = 15;
 
     private final RequestService requestService;
     private final StoreService storeService;
@@ -36,7 +37,7 @@ public class RequestsPageController {
     private static final Logger LOG = LoggerFactory.getLogger(MainPageController.class);
 
     @GetMapping("/user")
-    @Secured(value = {"ROLE_USER"})
+    @Secured(value = {"ROLE_USER","ROLE_PRICING"})
     public String openRequestsPage(Model model) {
         LOG.info("************************ openRequestsPage() ************************");
 
@@ -72,6 +73,33 @@ public class RequestsPageController {
 
         return "user/requests";
     }
+
+    @GetMapping("/user/confirmrequests/{page}")
+    @Secured(value = {"ROLE_PRICING"})
+    public String openUserAllRequestsToConfirmPage(@PathVariable("page") int page, Model model) {
+        Page<Request> pages = getAllRequestsPageable(page - 1);
+        int totalPages = pages.getTotalPages();
+        int currentPage = pages.getNumber();
+        List<Request> requestList = pages.getContent();
+
+        List<Store> storeList = requestList.stream()
+                .map(Request::getStore)
+                .collect(Collectors.toList());
+
+        List<Product> productList = requestList.stream()
+                .map(Request::getProduct)
+                .collect(Collectors.toList());
+
+        model.addAttribute("totalPages", totalPages);
+        model.addAttribute("currentPage", currentPage + 1);
+        model.addAttribute("requestList", requestList);
+        model.addAttribute("storeList", storeList);
+        model.addAttribute("productList", productList);
+        model.addAttribute("recordStartCounter", currentPage * ELEMENTS);
+
+        return "user/confirmrequests";
+    }
+
 
     private Page<Request> getAllRequestsPageable(int page) {
         Page<Request> pages = requestService.findAll(PageRequest.of(page, ELEMENTS));

@@ -11,7 +11,7 @@
     <style type="text/css">
         <%@include file="/resources/css/style.css" %>
     </style>
-    <title><s:message code="menu.Products"/></title>
+    <title><s:message code="menu.Stores"/></title>
     <script type="text/javascript">
         function changeTrBg(row) {
             row.style.backgroundColor = "#e6e6e6";
@@ -27,8 +27,9 @@
 
 <h2><s:message code="menu.trader"/></h2>
 <%@include file="/WEB-INF/incl/trmenu.app" %>
+<%@include file="/WEB-INF/incl/usermenu.app" %>
 
-<h2><s:message code="menu.Products"/></h2>
+<h2><s:message code="menu.Stores"/></h2>
 
 <c:set var="count" value="${recordStartCounter }"/>
 <div align="center">
@@ -39,25 +40,26 @@
     </div>
     <table width="1000" border="1" cellpadding="6" cellspacing="2" bgcolor="white">
         <tr bgcolor="#70a5ff">
-            <td width="40" align="center"><b><s:message code="product.id"/></b></td>
-            <td width="130" align="center"><b><s:message code="product.name"/></b></td>
-            <td width="100" align="center"><b><s:message code="product.price_per_pack"/></b></td>
-            <td width="50" align="center"><b><s:message code="product.quantity_per_pack"/></b></td>
-            <td width="700" align="center"><b><s:message code="product.description"/></b></td>
-            <td width="50" align="center"><b><s:message code="product.remove"/></b></td>
+            <td width="40" align="center"><b><s:message code="store.id"/></b></td>
+            <td width="190" align="center"><b><s:message code="store.name"/></b></td>
+            <td width="190" align="center"><b><s:message code="store.city"/></b></td>
+            <td width="200" align="center"><b><s:message code="store.street"/></b></td>
+            <td width="100" align="center"><b><s:message code="store.number"/></b></td>
+            <td width="100" align="center"><b><s:message code="store.country"/></b></td>
+            <td width="100" align="center"><b><s:message code="store.email"/></b></td>
+            <td width="100" align="center"><b><s:message code="store.phone"/></b></td>
         </tr>
-        <c:forEach var="p" items="${productList }">
+        <c:forEach var="s" items="${storeList }">
             <c:set var="count" value="${count+1}"/>
             <tr onmouseover="changeTrBg(this)" onmouseout="defaultTrBg(this)">
                 <td align="center"><c:out value="${count }"/></td>
-                <td align="center"><strong><c:out value="${p.name }"/></strong></td>
-                <td align="center"><c:out value="${p.price_per_pack }"/></td>
-                <td align="center"><c:out value="${p.quantity_per_pack }"/></td>
-                <td align="left"><c:out value="${p.description }"/></td>
-                <td align="center">
-                    <img src="/resources/images/delicon.png" width="16" height="16"
-                         title="<s:message code="product.remove"/>"/>
-                </td>
+                <td align="center"><strong><c:out value="${s.name }"/></strong></td>
+                <td align="center"><c:out value="${s.city }"/></td>
+                <td align="center"><c:out value="${s.street }"/></td>
+                <td align="center"><c:out value="${s.number }"/></td>
+                <td align="center"><c:out value="${s.country }"/></td>
+                <td align="center"><c:out value="${s.email }"/></td>
+                <td align="center"><c:out value="${s.phone }"/></td>
             </tr>
         </c:forEach>
     </table>
@@ -70,13 +72,13 @@
 
                 <c:if test="${currentPage > 1}">
                     <input type="button"
-                           onclick="window.location.href='${pageContext.request.contextPath}/trader/products/${currentPage - 1}'"
+                           onclick="window.location.href='${pageContext.request.contextPath}/trader/stores/${currentPage - 1}'"
                            value="<s:message code="link.previous"/>"/>&nbsp;&nbsp;
                 </c:if>
 
                 <c:if test="${currentPage < totalPages}">
                     <input type="button"
-                           onclick="window.location.href='${pageContext.request.contextPath}/trader/products/${currentPage + 1}'"
+                           onclick="window.location.href='${pageContext.request.contextPath}/trader/stores/${currentPage + 1}'"
                            value="<s:message code="link.next"/>"/>
                 </c:if>
 

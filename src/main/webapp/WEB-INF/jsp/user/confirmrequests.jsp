@@ -40,7 +40,7 @@
         <span id="errorSearch" style="color: red;"></span>
     </div>
 
-    <table width="1000" border="0" cellpadding="6" cellspacing="2" bgcolor="white">
+    <table width="1000" border="1" cellpadding="6" cellspacing="2" bgcolor="white">
         <tr bgcolor="#70a5ff">
             <td width="10" align="center"></td>
             <td width="30" align="center"><b><s:message code="request.id"/></b></td>

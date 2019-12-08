@@ -37,7 +37,7 @@
         <input type="text" id="searchString"/>&nbsp;&nbsp;
         <input type="button" value="<s:message code="button.search"/>" onclick="startSearch(0);"/><br/>
     </div>
-    <table width="1000" border="0" cellpadding="6" cellspacing="2" bgcolor="white">
+    <table width="1000" border="1" cellpadding="6" cellspacing="2" bgcolor="white">
         <tr bgcolor="#70a5ff">
             <td width="40" align="center"><b><s:message code="store.id"/></b></td>
             <td width="190" align="center"><b><s:message code="store.name"/></b></td>
@@ -53,7 +53,7 @@
             <c:set var="count" value="${count+1}"/>
             <tr onmouseover="changeTrBg(this)" onmouseout="defaultTrBg(this)">
                 <td align="center"><c:out value="${count }"/></td>
-                <td align="center"><c:out value="${s.name }"/></td>
+                <td align="center"><strong><c:out value="${s.name }"/></strong></td>
                 <td align="center"><c:out value="${s.city }"/></td>
                 <td align="center"><c:out value="${s.street }"/></td>
                 <td align="center"><c:out value="${s.number }"/></td>

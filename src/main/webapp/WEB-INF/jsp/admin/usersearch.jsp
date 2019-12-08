@@ -53,7 +53,7 @@
         <input type="button" value="<s:message code="button.search"/>" onclick="startSearch(0);"/><br/>
         <span id="errorSearch" style="color: red;"></span>
     </div>
-    <table width="1000" border="0" cellpadding="6" cellspacing="2">
+    <table width="1000" border="1" cellpadding="6" cellspacing="2">
         <tr bgcolor="#70a5ff">
             <td width="40" align="center"></td>
             <td width="40" align="center"><b><s:message code="admin.user.id"/></b></td>

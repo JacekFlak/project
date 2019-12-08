@@ -27,7 +27,7 @@
 
 <h2><s:message code="menu.trader"/></h2>
 <%@include file="/WEB-INF/incl/trmenu.app" %>
-
+<%@include file="/WEB-INF/incl/usermenu.app" %>
 <h2><s:message code="menu.Products"/></h2>
 
 <c:set var="count" value="${recordStartCounter }"/>
@@ -39,12 +39,11 @@
     </div>
     <table width="1000" border="1" cellpadding="6" cellspacing="2" bgcolor="white">
         <tr bgcolor="#70a5ff">
-            <td width="40" align="center"><b><s:message code="product.id"/></b></td>
-            <td width="130" align="center"><b><s:message code="product.name"/></b></td>
-            <td width="100" align="center"><b><s:message code="product.price_per_pack"/></b></td>
+            <td width="10" align="center"><b><s:message code="product.id"/></b></td>
+            <td width="85" align="center"><b><s:message code="product.name"/></b></td>
+            <td width="50" align="center"><b><s:message code="product.price_per_pack"/></b></td>
             <td width="50" align="center"><b><s:message code="product.quantity_per_pack"/></b></td>
-            <td width="700" align="center"><b><s:message code="product.description"/></b></td>
-            <td width="50" align="center"><b><s:message code="product.remove"/></b></td>
+            <td width="600" align="center"><b><s:message code="product.description"/></b></td>
         </tr>
         <c:forEach var="p" items="${productList }">
             <c:set var="count" value="${count+1}"/>
@@ -54,10 +53,6 @@
                 <td align="center"><c:out value="${p.price_per_pack }"/></td>
                 <td align="center"><c:out value="${p.quantity_per_pack }"/></td>
                 <td align="left"><c:out value="${p.description }"/></td>
-                <td align="center">
-                    <img src="/resources/images/delicon.png" width="16" height="16"
-                         title="<s:message code="product.remove"/>"/>
-                </td>
             </tr>
         </c:forEach>
     </table>

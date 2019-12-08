@@ -4,6 +4,8 @@
 			<td align="left">
 			<sec:authorize access="hasRole('ROLE_USER')">
 				<a href="/user/requests/1"><s:message code="menu.Requests"/></a>&nbsp;&nbsp;
+				<a href="/trader/userproducts/1"><s:message code="menu.Products"/></a>&nbsp;&nbsp;
+                <a href="/trader/userstores/1"><s:message code="menu.Stores"/></a>&nbsp;&nbsp;
 			 </sec:authorize>
 
 			 <sec:authorize access="hasRole('ROLE_PRICING')">

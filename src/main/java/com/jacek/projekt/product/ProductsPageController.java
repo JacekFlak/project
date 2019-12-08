@@ -29,7 +29,7 @@ public class ProductsPageController {
     private static final Logger LOG = LoggerFactory.getLogger(MainPageController.class);
 
     @GetMapping("/trader")
-    @Secured(value = {"ROLE_TRADER"})
+    @Secured(value = {"ROLE_TRADER","ROLE_USER"})
     public String openProductsPage(Model model) {
         LOG.info("************************ openTraderPage() ************************");
 
@@ -53,6 +53,21 @@ public class ProductsPageController {
         model.addAttribute("recordStartCounter", currentPage * ELEMENTS);
 
         return "trader/products";
+    }
+
+    @GetMapping("/trader/userproducts/{page}")
+    @Secured(value = {"ROLE_USER"})
+    public String openUserAllProductsPage(@PathVariable("page") int page, Model model) {
+        Page<Product> pages = getAllProductsPageable(page - 1);
+        int totalPages = pages.getTotalPages();
+        int currentPage = pages.getNumber();
+        List<Product> productList = pages.getContent();
+        model.addAttribute("totalPages", totalPages);
+        model.addAttribute("currentPage", currentPage + 1);
+        model.addAttribute("productList", productList);
+        model.addAttribute("recordStartCounter", currentPage * ELEMENTS);
+
+        return "trader/userproducts";
     }
 
     private Page<Product> getAllProductsPageable(int page) {

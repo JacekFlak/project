@@ -63,8 +63,8 @@
                     <c:choose>
 
                         <c:when test="${r.approved == 1 }">
-                            <img src="/resources/images/approved.png" width="55" height="35"
-                            title="<s:message code="request.approved"/>"/>
+                            <img src="/resources/images/approved.png" width="65" height="40"
+                                 title="<s:message code="request.approved"/>"/>
                         </c:when>
 
                         <c:otherwise>

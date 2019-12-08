@@ -48,7 +48,7 @@
             <td width="80" align="center"><b><s:message code="store.name"/></b></td>
             <td width="50" align="center"><b><s:message code="product.name"/></b></td>
             <td width="450" align="center"><b><s:message code="request.description"/></b></td>
-
+            <td width="60" align="center"><b><s:message code="request.decision"/></b></td>
         </tr>
         <c:forEach var="r" items="${requestList }" varStatus="status">
             <c:set var="count" value="${count+1}"/>
@@ -59,6 +59,19 @@
                 <td align="center"><c:out value="${storeList[status.index].name}"/></td>
                 <td align="center"><c:out value="${productList[status.index].name}"/></td>
                 <td align="left"><c:out value="${r.description }"/></td>
+                <td align="center">
+                    <c:choose>
+                        <c:when test="${r.approved == 1 }">
+                            <img src="/resources/images/approved.png" width="55" height="35"
+                                 title="<s:message code="request.approved"/>"/>
+                        </c:when>
+
+                        <c:otherwise>
+                            <img src="/resources/images/created.png" width="55" height="35"
+                                 title="<s:message code="request.created"/>"/>
+                        </c:otherwise>
+                    </c:choose>
+                </td>
             </tr>
         </c:forEach>
     </table>

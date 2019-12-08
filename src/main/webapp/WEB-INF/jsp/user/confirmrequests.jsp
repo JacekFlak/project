@@ -53,30 +53,24 @@
         <c:forEach var="r" items="${requestList }" varStatus="status">
             <c:set var="count" value="${count+1}"/>
             <tr onmouseover="changeTrBg(this)" onmouseout="defaultTrBg(this)">
-                <td align="center"><c:out value="${count }"/></td>
-                <td align="center"><c:out value="${r.id }"/></td>
-                <td align="center"><c:out value="${r.quantity }"/></td>
-                <td align="center"><c:out value="${storeList[status.index].name}"/></td>
-                <td align="center"><c:out value="${productList[status.index].name}"/></td>
-                <td align="left"><c:out value="${r.description }"/></td>
-                <td align="center">
-                    <c:choose>
-
-                        <c:when test="${r.approved == 1 }">
-                            <img src="/resources/images/approved.png" width="65" height="40"
-                                 title="<s:message code="request.approved"/>"/>
-                        </c:when>
-
-                        <c:otherwise>
-                            <img src="/resources/images/approve.png" width="55" height="35"
-                                 title="<s:message code="request.approve"/>"/>
-
-                            <img src="/resources/images/reject.png" width="55" height="35"
-                                 title="<s:message code="request.reject"/>"/>
-                        </c:otherwise>
-
-                    </c:choose>
-                </td>
+                <c:choose>
+                    <c:when test="${r.approved == 1 }">
+                        <td align="center"><c:out value="${count }"/></td>
+                        <td align="center"><c:out value="${r.id }"/></td>
+                        <td align="center"><c:out value="${r.quantity }"/></td>
+                        <td align="center"><c:out value="${storeList[status.index].name}"/></td>
+                        <td align="center"><c:out value="${productList[status.index].name}"/></td>
+                        <td align="left"><c:out value="${r.description }"/></td>
+                        <td align="center">
+                            <a href="">
+                                <img src="/resources/images/approve.png" width="55" height="35"
+                                     title="<s:message code="request.approve"/>"/> </a>
+                            <a href="">
+                                <img src="/resources/images/reject.png" width="55" height="35"
+                                     title="<s:message code="request.reject"/>"/> </a>
+                        </td>
+                    </c:when>
+                </c:choose>
             </tr>
         </c:forEach>
     </table>

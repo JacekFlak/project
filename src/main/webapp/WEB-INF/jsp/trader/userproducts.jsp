@@ -65,13 +65,13 @@
 
                 <c:if test="${currentPage > 1}">
                     <input type="button"
-                           onclick="window.location.href='${pageContext.request.contextPath}/trader/products/${currentPage - 1}'"
+                           onclick="window.location.href='${pageContext.request.contextPath}/trader/userproducts/${currentPage - 1}'"
                            value="<s:message code="link.previous"/>"/>&nbsp;&nbsp;
                 </c:if>
 
                 <c:if test="${currentPage < totalPages}">
                     <input type="button"
-                           onclick="window.location.href='${pageContext.request.contextPath}/trader/products/${currentPage + 1}'"
+                           onclick="window.location.href='${pageContext.request.contextPath}/trader/userproducts/${currentPage + 1}'"
                            value="<s:message code="link.next"/>"/>
                 </c:if>
 

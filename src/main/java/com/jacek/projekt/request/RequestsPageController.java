@@ -27,7 +27,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class RequestsPageController {
 
-    private static int ELEMENTS = 15;
+    private static int ELEMENTS = 10;
 
     private final RequestService requestService;
     private final StoreService storeService;
